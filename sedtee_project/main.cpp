@@ -1,29 +1,40 @@
-#include <SFML/Graphics.hpp>
-#include<iostream>
-#include "Manu.h"
+#include "Graphics.h"
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1080, 720), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Projecttest101");
 
-    Manu manu(window.getSize().x, window.getSize().y);
+	Graphics UI;
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+	UI.LoadAssets();
 
-      
+	/*float x = 0;
+	for (int i = 1; i <= 3;i++) {
+		UI.eggy1[i - 1].setPosition(x, 0);
+		UI.eggy2[i - 1].setPosition(x, 500);
+		x += 200;
+	}*/
 
-        window.clear();
-        manu.draw(window);
-        window.display();
-    }
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				window.close();
+			}
+		}
 
-    return 0;
+		window.clear();
+
+		/*for (int i = 0; i < 3;i++) {
+			window.draw(UI.eggy1[i]);
+			window.draw(UI.eggy2[i]);
+		}*/
+
+		window.display();
+	}
+
+	return 0;
 }
