@@ -8,12 +8,12 @@ int main()
 
 	UI.LoadAssets();
 
-	/*float x = 0;
+	float x = 0;
 	for (int i = 1; i <= 3;i++) {
 		UI.eggy1[i - 1].setPosition(x, 0);
 		UI.eggy2[i - 1].setPosition(x, 500);
 		x += 200;
-	}*/
+	}
 
 	while (window.isOpen())
 	{
@@ -28,10 +28,10 @@ int main()
 
 		window.clear();
 
-		/*for (int i = 0; i < 3;i++) {
+		for (int i = 0; i < 3;i++) {
 			window.draw(UI.eggy1[i]);
 			window.draw(UI.eggy2[i]);
-		}*/
+		}
 
 		window.display();
 	}
