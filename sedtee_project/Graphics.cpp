@@ -1,19 +1,15 @@
 #include "Graphics.h"
 
 void Graphics::LoadAssets() {
-	//load eggy1
+	//load eggy1,2
 	textureeggy1.loadFromFile("allpng\\eggy1.png");
-	sf::Sprite eggypng1;
-	eggypng1.setTexture(textureeggy1);
-	for (int i = 0; i < 3; i++) {
-		eggy1.push_back(eggypng1);
-	}
-
-	//load eggy2
 	textureeggy2.loadFromFile("allpng\\eggy2.png");
+	sf::Sprite eggypng1;
 	sf::Sprite eggypng2;
+	eggypng1.setTexture(textureeggy1);
 	eggypng2.setTexture(textureeggy2);
 	for (int i = 0; i < 3; i++) {
+		eggy1.push_back(eggypng1);
 		eggy2.push_back(eggypng2);
 	}
 
