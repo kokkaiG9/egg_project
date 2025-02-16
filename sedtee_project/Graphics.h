@@ -13,18 +13,28 @@ public:
 	void LoadAssets();
 };
 
-//class Manu
-//{
-//private:
-//	int selectedIteem = 0;
-//	sf::Font font;
-//	sf::Text menu[3];
-//
-//public:
-//	Manu(float width, float hight);
-//	~Manu();
-//
-//	void draw(sf::RenderWindow& window);
-//	void moveUp();
-//	void moveDown();
-//};
+
+/// //////////////////////////////////////////////////////ggggggggggggggggoooooooooooooooooooooooooowwwwwwwwwwwwwwwwwwwww//////////////////////////////
+
+class mainMenu
+{
+private:
+	int selectedIteem = 0;
+	sf::Font font;
+
+
+public:
+	sf::Text menu[3];
+	mainMenu(float width, float hight);
+	~mainMenu();
+
+	void draw(sf::RenderWindow& window);
+
+};
+
+enum class GameState {
+	MENU,
+	PLAY,
+	SETTINGS,
+	EXIT
+};
