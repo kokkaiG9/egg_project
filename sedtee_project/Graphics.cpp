@@ -1,7 +1,7 @@
 #include "Graphics.h"
 
 void Graphics::LoadAssets() {
-	//load eggy1,2
+	// load eggy1, eggy2, bg_menu, bg_play
 	textureeggy1.loadFromFile("allpng\\eggy1.png");
 	textureeggy2.loadFromFile("allpng\\eggy2.png");
 	sf::Sprite eggypng1;
@@ -12,17 +12,35 @@ void Graphics::LoadAssets() {
 		eggy1.push_back(eggypng1);
 		eggy2.push_back(eggypng2);
 	}
+	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
+	texturebg_play.loadFromFile("allpng\\bg_play.png");
+	bg_menu.setTexture(texturebg_menu);
+	bg_play.setTexture(texturebg_play);
 
-	//setScale eggy1,2
-	float scale = 0.75;
+	// setScale eggy1,2
+	float scale = 0.5;
 	for (int i = 0; i < 3; i++) {
 		eggy1[i].setScale(scale, scale);
 		eggy2[i].setScale(scale, scale);
-		scale += 0.25;
+		scale += 0.1;
+	}
+
+	// setPosiotion egg1,2
+	float x = 0;
+	for (int i = 0; i < 3; i++) {
+		eggy1[i].setPosition(x, 0);
+		eggy2[i].setPosition(x, 540);
+		x += 200;
 	}
 }
 
-
+void Graphics::drawplay(sf::RenderWindow& window) {
+	window.draw(bg_play);
+	for (int i = 0;i < 3;i++) {
+		window.draw(eggy1[i]);
+		window.draw(eggy2[i]);
+	}
+}
 
 ////////////////////////////////gggggggggggggggoooooooooooowwwwwwwwwwwwwwwwwww///////////////////////////////////////
 
@@ -64,7 +82,8 @@ mainMenu::~mainMenu()
 
 }
 
-void mainMenu::draw(sf::RenderWindow& window) {
+void mainMenu::draw(sf::RenderWindow& window, sf::Sprite bg_menu) {
+	window.draw(bg_menu);
 	for (int i = 0; i < MAX_ITEM; i++) {
 		window.draw(menu[i]);
 	}

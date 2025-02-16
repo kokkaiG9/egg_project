@@ -1,46 +1,68 @@
 #include "Graphics.h"
+// Warning: หากท่านเลื่อนหัวตะวันเเละหัวนนท์ไปเรื่อยๆเเล้วหน้าจอเกิดดำขึ้นมา โปรดรู้ไว้ว่าไม่ใช่ความผิดของท่านเเต่เป็นความผิดส่วนcode dragging...ไว้จะมาเเก้นะจุ้ฟมั่วะ <3
+// from: ktzboy sudcool
+
 
 int main()
 {
-	sf::RenderWindow MENU(sf::VideoMode(1920, 1080), "MENU");
-	/*sf::RenderWindow PLAY(sf::VideoMode(1920, 1080), "GAME");*/
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Eggy of Tawan&Nont !!!");
 
-	mainMenu mainmenu(MENU.getSize().x, MENU.getSize().y);
-	GameState gamestate = GameState::MENU;
 	Graphics UI;
-	
-
 	UI.LoadAssets();
 
-	float x = 0;
-	for (int i = 1; i <= 3;i++) {
-		UI.eggy1[i - 1].setPosition(x, 0);
-		UI.eggy2[i - 1].setPosition(x, 500);
-		x += 200;
-	}
+	mainMenu mainmenu(window.getSize().x, window.getSize().y);
+	GameState gamestate = GameState::MENU;
 
-	while (MENU.isOpen())
+	while (window.isOpen())
 	{
 		sf::Event event;
-		while (MENU.pollEvent(event))
+		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 			{
-				MENU.close();
+				window.close();
+			}
+			if (gamestate == GameState::PLAY) 
+			{
+				// dragging eggy1,2
+				if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+				{
+					for (int i = 0; i < 3; i++)
+					{
+						if (UI.eggy1[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+						{
+							UI.isDragging = true;
+							UI.offset = UI.eggy1[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+							UI.selectedeggy1 = i;
+							break;
+						}
+						else if (UI.eggy2[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+						{
+							UI.isDragging = true;
+							UI.offset = UI.eggy2[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+							UI.selectedeggy2 = i;
+							break;
+						}
+					}
+				}
+				if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
+					UI.isDragging = false;
+					UI.selectedeggy1 = UI.selectedeggy2 = -1;
+				}
 			}
 		}
 
 		///////////////////menu not manu/////////////////////////////////////////
 
-		if (mainmenu.menu[0].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+		if (mainmenu.menu[0].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 		{
 			mainmenu.menu[0].setFillColor(sf::Color::Red);
 		}
-		else if (mainmenu.menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+		else if (mainmenu.menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 		{
 			mainmenu.menu[1].setFillColor(sf::Color::Red);
 		}
-		else if (mainmenu.menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+		else if (mainmenu.menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 		{
 			mainmenu.menu[2].setFillColor(sf::Color::Red);
 		}
@@ -54,125 +76,53 @@ int main()
 		{*/
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
 		{
-			if (mainmenu.menu[0].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+			if (mainmenu.menu[0].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 			{
 				gamestate = GameState::PLAY;
 			}
-			else if (mainmenu.menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+			else if (mainmenu.menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 			{
 				gamestate = GameState::SETTINGS;
 			}
-			else if (mainmenu.menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(MENU).x, sf::Mouse::getPosition(MENU).y)) 
+			else if (mainmenu.menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)) 
 			{
-				MENU.close();
+				window.close();
 			}
 
 		}
 
-		MENU.clear();
-		mainmenu.draw(MENU);
-		MENU.display();
-			
-		
-
-		/*if (gamestate == GameState::PLAY)
+		// dragging egg1,2
+		if (UI.isDragging && UI.selectedeggy1 != -1)
 		{
-			sf::RenderWindow PLAY(sf::VideoMode(1920, 1080), "GAME");
-			while (PLAY.isOpen())
-			{
-				sf::Event event;
-				while (PLAY.pollEvent(event))
-				{
-					if (event.type == sf::Event::Closed)
-					{
-						PLAY.close();
-					}
-				}
-			}
-
-			MENU.close();
-			PLAY.clear();
-			for (int i = 0; i < 3; i++) {
-				PLAY.draw(UI.eggy1[i]);
-				PLAY.draw(UI.eggy2[i]);
-			}
-			PLAY.display();
-		}*/
-
-
-
-		/*MENU.clear();
-		mainmenu.draw(MENU);
-		MENU.display();*/
-
-
-
-		/*switch (gamestate) {
-		case GameState::MENU:
-			std::cout << "อยู่ในหน้าเมนู\n";
-			break;
-		case GameState::PLAY:
-			MENU.close();
-			PLAY.clear();
-			for (int i = 0; i < 3; i++) {
-				PLAY.draw(UI.eggy1[i]);
-				PLAY.draw(UI.eggy2[i]);
-			}
-			PLAY.display();
-			break;
-		default:
-			std::cout << "?????\n";
-			break;
-		}*/
-
-		/*if (gamestate == GameState::PLAY) {
-			while (PLAY.isOpen())
-			{
-				sf::Event event;
-				while (PLAY.pollEvent(event))
-				{
-					if (event.type == sf::Event::Closed)
-					{
-						PLAY.close();
-					}
-				}
-				MENU.close();
-				PLAY.clear();
-				for (int i = 0; i < 3; i++) {
-					PLAY.draw(UI.eggy1[i]);
-					PLAY.draw(UI.eggy2[i]);
-				}
-				PLAY.display();
-
-			}
-			
-		}*/
-		
-	/*	if (gamestate == GameState::MENU)
+			UI.eggy1[UI.selectedeggy1].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + UI.offset);
+		}
+		else if (UI.isDragging && UI.selectedeggy2 != -1)
 		{
-			MENU.clear();
-			mainmenu.draw(MENU);
-			
+			UI.eggy2[UI.selectedeggy2].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + UI.offset);
 		}
 
-		else if (gamestate == GameState::PLAY)
-		{
-			for (int i = 0; i < 3; i++) {
-				MENU.draw(UI.eggy1[i]);
-				MENU.draw(UI.eggy2[i]);
-			}
+
+
+		window.clear();
+
+		switch (gamestate) {
+			case GameState::MENU:
+				mainmenu.draw(window, UI.bg_menu);
+				break;
+			case GameState::PLAY:
+				UI.drawplay(window);
+				break;
+			case GameState::SETTINGS:
+				break;
+			default:
+				break;
 		}
-		MENU.display();*/
 
-
-
+		window.display();
 	}
 	
 
 	
-	
-
-
 	return 0;
 }
 

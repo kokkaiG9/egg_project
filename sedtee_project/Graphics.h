@@ -4,13 +4,22 @@
 #define MAX_ITEM 3
 
 class Graphics {
-public:
-	std::vector<sf::Sprite> eggy1; //eggy1[0](small) 3ตัว, eggy1[1](mid) 2ตัว, egg1[2](large) 3ตัว
-	std::vector<sf::Sprite> eggy2; //eggy2[0](small) 3ตัว, eggy2[1](mid) 2ตัว, egg2[2](large) 3ตัว
+private:
 	sf::Texture textureeggy1;
 	sf::Texture textureeggy2;
+	sf::Texture texturebg_menu;
+	sf::Texture texturebg_play;
+public:
+	std::vector<sf::Sprite> eggy1; // eggy1[0](small) 3ตัว, eggy1[1](mid) 2ตัว, egg1[2](large) 3ตัว
+	std::vector<sf::Sprite> eggy2; // eggy2[0](small) 3ตัว, eggy2[1](mid) 2ตัว, egg2[2](large) 3ตัว
+	sf::Sprite bg_menu;
+	sf::Sprite bg_play;
+	bool isDragging = false;
+	int selectedeggy1 = -1, selectedeggy2 = -1;
+	sf::Vector2f offset;
 
 	void LoadAssets();
+	void drawplay(sf::RenderWindow&);
 };
 
 
@@ -28,7 +37,7 @@ public:
 	mainMenu(float width, float hight);
 	~mainMenu();
 
-	void draw(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window, sf::Sprite);
 
 };
 
