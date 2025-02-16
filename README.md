@@ -1,1 +1,1 @@
-# sedtee_project
+# egg_project
