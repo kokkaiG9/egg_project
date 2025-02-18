@@ -3,6 +3,13 @@
 #include <iostream>
 #define MAX_ITEM 3
 
+enum class GameState {
+	MENU,
+	PLAY,
+	SETTINGS,
+	EXIT
+};
+
 class Graphics {
 private:
 	sf::Texture textureeggy1;
@@ -20,6 +27,8 @@ public:
 
 	void LoadAssets();
 	void drawplay(sf::RenderWindow&);
+	void draggingeggy(sf::Event);
+	void draggingeggyblabla(sf::RenderWindow&);
 };
 
 
@@ -31,19 +40,12 @@ private:
 	int selectedIteem = 0;
 	sf::Font font;
 
-
 public:
 	sf::Text menu[3];
 	mainMenu(float width, float hight);
 	~mainMenu();
 
 	void draw(sf::RenderWindow& window, sf::Sprite);
-
-};
-
-enum class GameState {
-	MENU,
-	PLAY,
-	SETTINGS,
-	EXIT
+	void changecolorbuttonmenu(sf::RenderWindow&);
+	void changestatebutton(GameState&, sf::RenderWindow&);
 };
