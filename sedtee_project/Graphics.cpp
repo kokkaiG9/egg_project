@@ -9,36 +9,63 @@ void Graphics::LoadAssets() {
 	eggypng1.setTexture(textureeggy1);
 	eggypng2.setTexture(textureeggy2);
 	for (int i = 0; i < 3; i++) {
-		eggy1.push_back(eggypng1);
-		eggy2.push_back(eggypng2);
+		eggy1small.push_back(eggypng1);
+		eggy2small.push_back(eggypng2);
+		eggy1mid.push_back(eggypng1);
+		eggy2mid.push_back(eggypng2);
+		if (i < 2) {
+			eggy1large.push_back(eggypng1);
+			eggy2large.push_back(eggypng2);
+		}
 	}
+
 	texturebg_menu.loadFromFile("allpng\\bg_menu2.png");
 	texturebg_play.loadFromFile("allpng\\bg_play.png");
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
 
 	// setScale eggy1,2
-	float scale = 0.5;
 	for (int i = 0; i < 3; i++) {
-		eggy1[i].setScale(scale, scale);
-		eggy2[i].setScale(scale, scale);
-		scale += 0.1;
+		eggy1small[i].setScale(0.3, 0.3);
+		eggy2small[i].setScale(0.3, 0.3);
+	}
+	for (int i = 0; i < 3; i++) {
+		eggy1mid[i].setScale(0.4, 0.4);
+		eggy2mid[i].setScale(0.4, 0.4);
+	}
+	for (int i = 0; i < 2; i++) {
+		eggy1large[i].setScale(0.5, 0.5);
+		eggy2large[i].setScale(0.5, 0.5);
 	}
 
-	// setPosiotion egg1,2
-	float x = 0;
+	// setPosition egg1,2
 	for (int i = 0; i < 3; i++) {
-		eggy1[i].setPosition(x, 0);
-		eggy2[i].setPosition(x, 540);
-		x += 200;
+		eggy1small[i].setPosition(0, 0);
+		eggy2small[i].setPosition(0, 500);
+	}
+	for (int i = 0; i < 3; i++) {
+		eggy1mid[i].setPosition(600, 0);
+		eggy2mid[i].setPosition(600, 500);
+	}
+	for (int i = 0; i < 2; i++) {
+		eggy1large[i].setPosition(1200, 0);
+		eggy2large[i].setPosition(1200, 500);
 	}
 }
 
 void Graphics::drawplay(sf::RenderWindow& window) {
 	window.draw(bg_play);
 	for (int i = 0;i < 3;i++) {
-		window.draw(eggy1[i]);
-		window.draw(eggy2[i]);
+		window.draw(eggy1small[i]);
+		window.draw(eggy2small[i]);
+	}
+	for (int i = 0;i < 3;i++) {
+		window.draw(eggy1mid[i]);
+		window.draw(eggy2mid[i]);
+	}
+	for (int i = 0;i < 2;i++) {
+		window.draw(eggy1large[i]);
+		window.draw(eggy2large[i]);
 	}
 }
 
@@ -47,40 +74,110 @@ void Graphics::draggingeggy(sf::Event event) {
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			if (eggy1[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			if (eggy1small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
 			{
 				isDragging = true;
-				offset = eggy1[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
-				selectedeggy1 = i;
+				offset = eggy1small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy1small = i;
 				break;
 			}
-			else if (eggy2[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
 			{
 				isDragging = true;
-				offset = eggy2[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
-				selectedeggy2 = i;
+				offset = eggy2small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy2small = i;
+				break;
+			}
+		}
+		for (int i = 0; i < 3; i++)
+		{
+			if (eggy1small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy1small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy1small = i;
+				break;
+			}
+			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy2small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy2small = i;
+				break;
+			}
+		}
+		for (int i = 0; i < 3; i++)
+		{
+			if (eggy1mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy1mid[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy1mid = i;
+				break;
+			}
+			else if (eggy2mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy2mid[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy2mid = i;
+				break;
+			}
+		}
+		for (int i = 0; i < 2; i++)
+		{
+			if (eggy1large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy1large[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy1large = i;
+				break;
+			}
+			else if (eggy2large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+			{
+				isDragging = true;
+				offset = eggy2large[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+				selectedeggy2large = i;
 				break;
 			}
 		}
 	}
 	if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
 		isDragging = false;
-		selectedeggy1 = selectedeggy2 = -1;
+		selectedeggy1small = selectedeggy2small = -1;
+		selectedeggy1mid = selectedeggy2mid = -1;
+		selectedeggy1large = selectedeggy2large = -1;
 	}
 }
 
 void Graphics::draggingeggyblabla(sf::RenderWindow& window) {
-	if (isDragging && selectedeggy1 != -1)
+	if (isDragging && selectedeggy1small != -1)
 	{
-		eggy1[selectedeggy1].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+		eggy1small[selectedeggy1small].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
 	}
-	else if (isDragging && selectedeggy2 != -1)
+	else if (isDragging && selectedeggy2small != -1)
 	{
-		eggy2[selectedeggy2].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+		eggy2small[selectedeggy2small].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+	}
+	else if (isDragging && selectedeggy1mid != -1)
+	{
+		eggy1mid[selectedeggy1mid].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+	}
+	else if (isDragging && selectedeggy2mid != -1)
+	{
+		eggy2mid[selectedeggy2mid].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+	}
+	else if (isDragging && selectedeggy1large != -1)
+	{
+		eggy1large[selectedeggy1large].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
+	}
+	else if (isDragging && selectedeggy2large != -1)
+	{
+		eggy2large[selectedeggy2large].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
 	}
 }
-////////////////////////////////gggggggggggggggoooooooooooowwwwwwwwwwwwwwwwwww///////////////////////////////////////
 
+
+////////////////////////////////gggggggggggggggoooooooooooowwwwwwwwwwwwwwwwwww///////////////////////////////////////
 
 mainMenu::mainMenu(float width, float height)
 {
