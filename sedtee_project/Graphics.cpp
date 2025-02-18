@@ -1,7 +1,55 @@
 #include "Graphics.h"
 
 void Graphics::LoadAssets() {
-	// load eggy1, eggy2, bg_menu, bg_play
+	// load number0,1,2,3
+	texturenumber0.loadFromFile("allpng\\number0.png");
+	texturenumber1.loadFromFile("allpng\\number1.png");
+	texturenumber2.loadFromFile("allpng\\number2.png");
+	texturenumber3.loadFromFile("allpng\\number3.png");
+	sf::Sprite tempnumber;
+	for (int i = 0; i < 4; i++) {
+		if(i == 0) tempnumber.setTexture(texturenumber0);
+		else if(i == 1) tempnumber.setTexture(texturenumber1);
+		else if (i == 2) tempnumber.setTexture(texturenumber2);
+		else tempnumber.setTexture(texturenumber3);
+		number.push_back(tempnumber);
+	}
+
+	// load bg_menu, bg_play
+	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
+	texturebg_play.loadFromFile("allpng\\bg_play.png");
+	bg_menu.setTexture(texturebg_menu);
+	bg_play.setTexture(texturebg_play);
+
+	// load eggy1frame, eggy2frame
+	textureeggy1frame.loadFromFile("allpng\\eggy1frame.png");
+	textureeggy2frame.loadFromFile("allpng\\eggy2frame.png");
+	sf::Sprite tempeggy1frame;
+	sf::Sprite tempeggy2frame;
+	tempeggy1frame.setTexture(textureeggy1frame);
+	tempeggy2frame.setTexture(textureeggy2frame);
+	for (int i = 0; i < 3; i++) {
+		eggy1frame.push_back(tempeggy1frame);
+		eggy2frame.push_back(tempeggy2frame);
+	}
+
+	// setScale eggy1frame, eggy2frame
+	eggy1frame[0].setScale(s, s);
+	eggy2frame[0].setScale(s, s);
+	eggy1frame[1].setScale(m, m);
+	eggy2frame[1].setScale(m, m);
+	eggy1frame[2].setScale(l, l);
+	eggy2frame[2].setScale(l, l);
+
+	// setPosition eggy1frame, eggy2frame
+	eggy1frame[0].setPosition(550, 830);
+	eggy2frame[0].setPosition(900, 900);
+	eggy1frame[1].setPosition(300, 772.5);
+	eggy2frame[1].setPosition(900, 900);
+	eggy1frame[2].setPosition(25, 700);
+	eggy2frame[2].setPosition(900, 900);
+
+	// load eggy1, eggy2
 	textureeggy1.loadFromFile("allpng\\eggy1.png");
 	textureeggy2.loadFromFile("allpng\\eggy2.png");
 	sf::Sprite eggypng1;
@@ -19,42 +67,44 @@ void Graphics::LoadAssets() {
 		}
 	}
 
-	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
-	texturebg_play.loadFromFile("allpng\\bg_play.png");
-	bg_menu.setTexture(texturebg_menu);
-	bg_play.setTexture(texturebg_play);
-
 	// setScale eggy1,2
 	for (int i = 0; i < 3; i++) {
 		eggy1small[i].setScale(0.3, 0.3);
-		eggy2small[i].setScale(0.3, 0.3);
+		eggy2small[i].setScale(0.5, 0.5);
 	}
 	for (int i = 0; i < 3; i++) {
-		eggy1mid[i].setScale(0.4, 0.4);
-		eggy2mid[i].setScale(0.4, 0.4);
+		eggy1mid[i].setScale(0.45, 0.45);
+		eggy2mid[i].setScale(0.75, 0.75);
 	}
 	for (int i = 0; i < 2; i++) {
-		eggy1large[i].setScale(0.5, 0.5);
-		eggy2large[i].setScale(0.5, 0.5);
+		eggy1large[i].setScale(0.6, 0.6);
+		eggy2large[i].setScale(1, 1);
 	}
 
 	// setPosition egg1,2
 	for (int i = 0; i < 3; i++) {
-		eggy1small[i].setPosition(100, 0);
-		eggy2small[i].setPosition(0, 500);
+		eggy1small[i].setPosition(0, 0);
+		eggy2small[i].setPosition(0, 0);
 	}
 	for (int i = 0; i < 3; i++) {
-		eggy1mid[i].setPosition(600, 0);
+		eggy1mid[i].setPosition(400, 911);
 		eggy2mid[i].setPosition(600, 500);
 	}
 	for (int i = 0; i < 2; i++) {
-		eggy1large[i].setPosition(1200, 0);
+		eggy1large[i].setPosition(100, 856);
 		eggy2large[i].setPosition(1200, 500);
 	}
 }
 
 void Graphics::drawplay(sf::RenderWindow& window) {
+	// draw background
 	window.draw(bg_play);
+	// draw frame
+	for (int i = 0; i < 3; i++) {
+		window.draw(eggy1frame[i]);
+		window.draw(eggy2frame[i]);
+	}
+
 	for (int i = 0;i < 3;i++) {
 		window.draw(eggy1small[i]);
 		window.draw(eggy2small[i]);
