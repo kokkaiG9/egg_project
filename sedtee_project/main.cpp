@@ -1,6 +1,5 @@
 #include "Graphics.h"
 
-
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Eggy of Tawan&Nont !!!");
@@ -40,7 +39,7 @@ int main()
 			case GameState::PLAY:
 				UI.drawplay(window);
 				break;
-			case GameState::SETTINGS:
+			case GameState::TUTORIAL:
 				break;
 			default:
 				break;

@@ -6,7 +6,7 @@
 enum class GameState {
 	MENU,
 	PLAY,
-	SETTINGS,
+	TUTORIAL,
 	EXIT
 };
 
@@ -22,12 +22,12 @@ private:
 	int selectedeggy1large = -1, selectedeggy2large = -1;
 	sf::Vector2f offset;
 public:
-	std::vector<sf::Sprite> eggy1small; 
-	std::vector<sf::Sprite> eggy1mid;
-	std::vector<sf::Sprite> eggy1large;
-	std::vector<sf::Sprite> eggy2small; 
-	std::vector<sf::Sprite> eggy2mid;
-	std::vector<sf::Sprite> eggy2large; 
+	std::vector<sf::Sprite> eggy1small; // 3ตัว
+	std::vector<sf::Sprite> eggy1mid; // 3ตัว
+	std::vector<sf::Sprite> eggy1large; // 2ตัว
+	std::vector<sf::Sprite> eggy2small; // 3ตัว
+	std::vector<sf::Sprite> eggy2mid; // 3ตัว
+	std::vector<sf::Sprite> eggy2large; // 2ตัว
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
 

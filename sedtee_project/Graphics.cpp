@@ -19,7 +19,7 @@ void Graphics::LoadAssets() {
 		}
 	}
 
-	texturebg_menu.loadFromFile("allpng\\bg_menu2.png");
+	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
 	texturebg_play.loadFromFile("allpng\\bg_play.png");
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
@@ -40,7 +40,7 @@ void Graphics::LoadAssets() {
 
 	// setPosition egg1,2
 	for (int i = 0; i < 3; i++) {
-		eggy1small[i].setPosition(0, 0);
+		eggy1small[i].setPosition(100, 0);
 		eggy2small[i].setPosition(0, 500);
 	}
 	for (int i = 0; i < 3; i++) {
@@ -199,7 +199,7 @@ mainMenu::mainMenu(float width, float height)
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
-	menu[1].setString("SETTING");//หรือจะใส่ tutorail  แทน
+	menu[1].setString("TUTORIAL");
 	menu[1].setOrigin(menu[1].getGlobalBounds().width / 2, menu[1].getGlobalBounds().height / 2);
 	menu[1].setPosition(sf::Vector2f(width / 2, height / (MAX_ITEM + 1) * 2));
 
@@ -254,7 +254,7 @@ void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window)
 			}
 			else if (menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 			{
-				gamestate = GameState::SETTINGS;
+				gamestate = GameState::TUTORIAL;
 			}
 			else if (menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 			{
