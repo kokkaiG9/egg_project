@@ -417,32 +417,20 @@ mainMenu::mainMenu(float width, float height)
 	/*sf::Text scoretext("Score", font, 80);*/
 	menu[0].setFont(font);
 	//menu[0].setCharacterSize(100);
-	menu[0].setFillColor(sf::Color::White);
 	//menu[0].setFillColor(sf::Color(250,0,100); //RGB
 	//menu[0].setStyle(sf::Text::Style::Underlined | sf::Text::Style::Italic);//ขีดเส้นใต้ข้อความ 4 ตัวเอียง 2
 	//menu[0].setOutlineColor(sf::Color::Green); //เส้นขอบ
 	//menu[0].setOutlineThickness(2); //ขอบหนา
-	menu[0].setCharacterSize(35);
 	menu[0].setString("PLAY");
 	menu[0].setOrigin(menu[0].getGlobalBounds().width / 2, menu[0].getGlobalBounds().height / 2);
-	menu[0].setPosition(1607, 438);
-
 
 	menu[1].setFont(font);
-	menu[1].setFillColor(sf::Color::White);
-	menu[1].setCharacterSize(35);
 	menu[1].setString("TUTORIAL");
 	menu[1].setOrigin(menu[1].getGlobalBounds().width / 2, menu[1].getGlobalBounds().height / 2);
-	menu[1].setPosition(1607, 652);
 
 	menu[2].setFont(font);
-	menu[2].setFillColor(sf::Color::White);
-	menu[2].setCharacterSize(35);
 	menu[2].setString("EXIT");
 	menu[2].setOrigin(menu[2].getGlobalBounds().width / 2, menu[2].getGlobalBounds().height / 2);
-	menu[2].setPosition(1604, 864);
-
-
 }
 mainMenu::~mainMenu()
 {
@@ -460,19 +448,34 @@ void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
 	if (menu[0].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 	{
 		menu[0].setFillColor(sf::Color::Red);
+		menu[0].setCharacterSize(45);
+		menu[0].setOutlineColor(sf::Color::White);
+		menu[0].setPosition(1587, 431);
 	}
 	else if (menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 	{
 		menu[1].setFillColor(sf::Color::Red);
+		menu[1].setOutlineColor(sf::Color::White);
+		menu[1].setCharacterSize(45);
+		menu[1].setPosition(1565, 645);
 	}
 	else if (menu[2].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 	{
 		menu[2].setFillColor(sf::Color::Red);
+		menu[2].setOutlineColor(sf::Color::White);
+		menu[2].setCharacterSize(45);
+		menu[2].setPosition(1592, 859);
 	}
 	else {
-		menu[0].setFillColor(sf::Color::White);
-		menu[1].setFillColor(sf::Color::White);
-		menu[2].setFillColor(sf::Color::White);
+		for (int i = 0; i < 3; i++) {
+			menu[i].setFillColor(sf::Color::White);
+			menu[i].setCharacterSize(35);
+			menu[i].setOutlineColor(sf::Color::Black);
+			menu[i].setOutlineThickness(3);
+		}
+		menu[0].setPosition(1598, 438);
+		menu[1].setPosition(1590, 652);
+		menu[2].setPosition(1604, 864);
 	}
 }
 
