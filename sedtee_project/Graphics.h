@@ -12,21 +12,29 @@ enum class GameState {
 
 class Graphics {
 private:
-	sf::Texture textureeggy1;
-	sf::Texture textureeggy2;
-	sf::Texture texturebg_menu;
-	sf::Texture texturebg_play;
+	sf::Texture textureeggy1small;
+	sf::Texture textureeggy1mid;
+	sf::Texture textureeggy1large;
+	sf::Texture textureeggy2small;
+	sf::Texture textureeggy2mid;
+	sf::Texture textureeggy2large;
 	sf::Texture textureeggy1frame;
 	sf::Texture textureeggy2frame;
+	sf::Texture texturebg_menu;
+	sf::Texture texturebg_play;
 	sf::Texture texturenumber0;
 	sf::Texture texturenumber1;
 	sf::Texture texturenumber2;
 	sf::Texture texturenumber3;
+	sf::Texture texturebackarrow;
 	bool isDragging = false;
 	int selectedeggy1small = -1, selectedeggy2small = -1;
 	int selectedeggy1mid = -1, selectedeggy2mid = -1;
 	int selectedeggy1large = -1, selectedeggy2large = -1;
 	sf::Vector2f offset;
+	int Numeggy1smallinframe = NULL, Numeggy1midinframe = NULL, Numeggy1largeinframe = NULL;
+	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
+
 public:
 	std::vector<sf::Sprite> eggy1small; // 3ตัว
 	std::vector<sf::Sprite> eggy1mid; // 3ตัว
@@ -39,15 +47,14 @@ public:
 	std::vector<sf::Sprite> eggy2frame; // 3frames
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
+	sf::Sprite backarrow;
 
 	void LoadAssets();
 	void drawplay(sf::RenderWindow&);
 	void draggingeggy(sf::Event);
-	void draggingeggyblabla(sf::RenderWindow&);
+	void draggingeggyandblabla(sf::RenderWindow&);
+	void checkbackstage(sf::Event, GameState&);
 };
-
-
-/// //////////////////////////////////////////////////////ggggggggggggggggoooooooooooooooooooooooooowwwwwwwwwwwwwwwwwwwww//////////////////////////////
 
 class mainMenu
 {
@@ -60,7 +67,7 @@ public:
 	mainMenu(float width, float hight);
 	~mainMenu();
 
-	void draw(sf::RenderWindow& window, sf::Sprite);
+	void drawmenu(sf::RenderWindow& window, sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
 	void changestatebutton(GameState&, sf::RenderWindow&);
 };

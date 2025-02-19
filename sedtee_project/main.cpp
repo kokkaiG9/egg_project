@@ -21,25 +21,31 @@ int main()
 			}
 			if (gamestate == GameState::PLAY) 
 			{
+				UI.checkbackstage(event, gamestate);
 				UI.draggingeggy(event); // dragging eggy1,2
+			}
+			if (gamestate == GameState::TUTORIAL)
+			{
+				UI.checkbackstage(event, gamestate);
 			}
 		}
 
 		mainmenu.changecolorbuttonmenu(window); // เปลี่ยนสีปุ่มหน้าmenuตอนเอาเมาส์ชี้
 		mainmenu.changestatebutton(gamestate, window); // ปุ่มเปลี่ยนหน้าเกม
-		UI.draggingeggyblabla(window); // dragging egg1,2
+		UI.draggingeggyandblabla(window); // dragging egg1,2
 
 
 		window.clear();
 
 		switch (gamestate) {
 			case GameState::MENU:
-				mainmenu.draw(window, UI.bg_menu);
+				mainmenu.drawmenu(window, UI.bg_menu);
 				break;
 			case GameState::PLAY:
 				UI.drawplay(window);
 				break;
 			case GameState::TUTORIAL:
+				window.draw(UI.backarrow);
 				break;
 			default:
 				break;
