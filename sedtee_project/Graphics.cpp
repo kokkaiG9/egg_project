@@ -1,5 +1,4 @@
 #include "Graphics.h"
-
 void Graphics::LoadAssets() {
 	// load number0,1,2,3
 	texturenumber0.loadFromFile("allpng\\number0.png");
@@ -173,138 +172,6 @@ void Graphics::LoadAssets() {
 	}
 }
 
-void Graphics::drawplay(sf::RenderWindow& window) {
-	// draw background
-	window.draw(bg_play);
-	window.draw(backarrow);
-	for (int i = 0; i < 3; i++) {
-		// draw frame
-		window.draw(eggy1frame[i]);
-		window.draw(eggy2frame[i]);
-		// draw Numeggy1small
-		if (Numeggy1smallinframe == 0) {
-			number[0].setPosition(455, 882.68);
-			window.draw(number[0]);
-		}
-		else if (Numeggy1smallinframe == 1) {
-			number[1].setPosition(455, 882.68);
-			window.draw(number[1]);
-		}
-		else if (Numeggy1smallinframe == 2) {
-			number[2].setPosition(455, 882.68);
-			window.draw(number[2]);
-		}
-		else if (Numeggy1smallinframe == 3) {
-			number[3].setPosition(455, 882.68);
-			window.draw(number[3]);
-		}
-		// draw Numeggy1mid
-		if (Numeggy1midinframe == 0) {
-			number[0].setPosition(260, 810.88);
-			window.draw(number[0]);
-		}
-		else if (Numeggy1midinframe == 1) {
-			number[1].setPosition(260, 810.88);
-			window.draw(number[1]);
-		}
-		else if (Numeggy1midinframe == 2) {
-			number[2].setPosition(260, 810.88);
-			window.draw(number[2]);
-		}
-		else if (Numeggy1midinframe == 3) {
-			number[3].setPosition(260, 810.88);
-			window.draw(number[3]);
-		}
-		// draw Numeggy1large
-		if (Numeggy1largeinframe == 0) {
-			number[0].setPosition(25, 753.44);
-			window.draw(number[0]);
-		}
-		else if (Numeggy1largeinframe == 1) {
-			number[1].setPosition(25, 753.44);
-			window.draw(number[1]);
-		}
-		else if (Numeggy1largeinframe == 2) {
-			number[2].setPosition(25, 753.44);
-			window.draw(number[2]);
-		}
-		// draw Numeggy2small
-		if (Numeggy2smallinframe == 0) {
-			number[0].setPosition(1345, 25);
-			window.draw(number[0]);
-		}
-		else if (Numeggy2smallinframe == 1) {
-			number[1].setPosition(1345, 25);
-			window.draw(number[1]);
-		}
-		else if (Numeggy2smallinframe == 2) {
-			number[2].setPosition(1345, 25);
-			window.draw(number[2]);
-		}
-		else if (Numeggy2smallinframe == 3) {
-			number[3].setPosition(1345, 25);
-			window.draw(number[3]);
-		}
-		// draw Numeggy2mid
-		if (Numeggy2midinframe == 0) {
-			number[0].setPosition(1490, 25);
-			window.draw(number[0]);
-		}
-		else if (Numeggy2midinframe == 1) {
-			number[1].setPosition(1490, 25);
-			window.draw(number[1]);
-		}
-		else if (Numeggy2midinframe == 2) {
-			number[2].setPosition(1490, 25);
-			window.draw(number[2]);
-		}
-		else if (Numeggy2midinframe == 3) {
-			number[3].setPosition(1490, 25);
-			window.draw(number[3]);
-		}
-		// draw Numeggy2large
-		if (Numeggy2largeinframe == 0) {
-			number[0].setPosition(1685, 25);
-			window.draw(number[0]);
-		}
-		else if (Numeggy2largeinframe == 1) {
-			number[1].setPosition(1685, 25);
-			window.draw(number[1]);
-		}
-		else if (Numeggy2largeinframe == 2) {
-			number[2].setPosition(1685, 25);
-			window.draw(number[2]);
-		}
-	}
-	//draw eggy
-	for (int i = 0;i < 3;i++) {
-		window.draw(eggy1small[i]);
-		window.draw(eggy2small[i]);
-	}
-	for (int i = 0;i < 3;i++) {
-		window.draw(eggy1mid[i]);
-		window.draw(eggy2mid[i]);
-	}
-	for (int i = 0;i < 2;i++) {
-		window.draw(eggy1large[i]);
-		window.draw(eggy2large[i]);
-	}
-
-	//reset Numeggyinframe
-	Numeggy1smallinframe = Numeggy1midinframe = Numeggy1largeinframe = 0;
-	Numeggy2smallinframe = Numeggy2midinframe = Numeggy2largeinframe = 0;
-}
-
-void Graphics::checkbackstage(sf::Event event, GameState& gamestate) {
-	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
-	{
-		if (backarrow.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
-		{
-			gamestate = GameState::MENU;
-		}
-	}
-}
-
 void Graphics::draggingeggy(sf::Event event) {
 	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
 	{
@@ -466,23 +333,16 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 	Numeggy2largeinframe = n2l;
 }
 
-//draw sq99 cream green//
-void Graphics::drawsq99(sf::RenderWindow& window)
-{
-	window.draw(sq99_11);
-	window.draw(sq99_12);
-	window.draw(sq99_13);
-	window.draw(sq99_21);
-	window.draw(sq99_22);
-	window.draw(sq99_23);
-	window.draw(sq99_31);
-	window.draw(sq99_32);
-	window.draw(sq99_33);
-	
-	 	
+void Graphics::checkbackstage(sf::Event event, GameState& gamestate) {
+	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+	{
+		if (backarrow.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+		{
+			gamestate = GameState::MENU;
+		}
+	}
 }
 
-//change sq99 ro green//
 void Graphics::changecolorsq99(sf::RenderWindow& window)
 {
 	if (sq99_11.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
@@ -544,9 +404,149 @@ void Graphics::changecolorsq99(sf::RenderWindow& window)
 	}
 }
 
+void Graphics::drawNumeggy(sf::RenderWindow& window) {
+	for (int i = 0; i < 3; i++) {
+		// draw Numeggy1small
+		if (Numeggy1smallinframe == 0) {
+			number[0].setPosition(455, 882.68);
+			window.draw(number[0]);
+		}
+		else if (Numeggy1smallinframe == 1) {
+			number[1].setPosition(455, 882.68);
+			window.draw(number[1]);
+		}
+		else if (Numeggy1smallinframe == 2) {
+			number[2].setPosition(455, 882.68);
+			window.draw(number[2]);
+		}
+		else if (Numeggy1smallinframe == 3) {
+			number[3].setPosition(455, 882.68);
+			window.draw(number[3]);
+		}
+		// draw Numeggy1mid
+		if (Numeggy1midinframe == 0) {
+			number[0].setPosition(260, 810.88);
+			window.draw(number[0]);
+		}
+		else if (Numeggy1midinframe == 1) {
+			number[1].setPosition(260, 810.88);
+			window.draw(number[1]);
+		}
+		else if (Numeggy1midinframe == 2) {
+			number[2].setPosition(260, 810.88);
+			window.draw(number[2]);
+		}
+		else if (Numeggy1midinframe == 3) {
+			number[3].setPosition(260, 810.88);
+			window.draw(number[3]);
+		}
+		// draw Numeggy1large
+		if (Numeggy1largeinframe == 0) {
+			number[0].setPosition(25, 753.44);
+			window.draw(number[0]);
+		}
+		else if (Numeggy1largeinframe == 1) {
+			number[1].setPosition(25, 753.44);
+			window.draw(number[1]);
+		}
+		else if (Numeggy1largeinframe == 2) {
+			number[2].setPosition(25, 753.44);
+			window.draw(number[2]);
+		}
+		// draw Numeggy2small
+		if (Numeggy2smallinframe == 0) {
+			number[0].setPosition(1345, 25);
+			window.draw(number[0]);
+		}
+		else if (Numeggy2smallinframe == 1) {
+			number[1].setPosition(1345, 25);
+			window.draw(number[1]);
+		}
+		else if (Numeggy2smallinframe == 2) {
+			number[2].setPosition(1345, 25);
+			window.draw(number[2]);
+		}
+		else if (Numeggy2smallinframe == 3) {
+			number[3].setPosition(1345, 25);
+			window.draw(number[3]);
+		}
+		// draw Numeggy2mid
+		if (Numeggy2midinframe == 0) {
+			number[0].setPosition(1490, 25);
+			window.draw(number[0]);
+		}
+		else if (Numeggy2midinframe == 1) {
+			number[1].setPosition(1490, 25);
+			window.draw(number[1]);
+		}
+		else if (Numeggy2midinframe == 2) {
+			number[2].setPosition(1490, 25);
+			window.draw(number[2]);
+		}
+		else if (Numeggy2midinframe == 3) {
+			number[3].setPosition(1490, 25);
+			window.draw(number[3]);
+		}
+		// draw Numeggy2large
+		if (Numeggy2largeinframe == 0) {
+			number[0].setPosition(1685, 25);
+			window.draw(number[0]);
+		}
+		else if (Numeggy2largeinframe == 1) {
+			number[1].setPosition(1685, 25);
+			window.draw(number[1]);
+		}
+		else if (Numeggy2largeinframe == 2) {
+			number[2].setPosition(1685, 25);
+			window.draw(number[2]);
+		}
+	}
+	//reset Numeggyinframe
+	Numeggy1smallinframe = Numeggy1midinframe = Numeggy1largeinframe = 0;
+	Numeggy2smallinframe = Numeggy2midinframe = Numeggy2largeinframe = 0;
+}
 
+void Graphics::drawSq99(sf::RenderWindow& window) {
+	window.draw(sq99_11);
+	window.draw(sq99_12);
+	window.draw(sq99_13);
+	window.draw(sq99_21);
+	window.draw(sq99_22);
+	window.draw(sq99_23);
+	window.draw(sq99_31);
+	window.draw(sq99_32);
+	window.draw(sq99_33);
+}
 
-//draw menu//
+void Graphics::drawEggy(sf::RenderWindow& window) {
+	for (int i = 0;i < 3;i++) {
+		window.draw(eggy1small[i]);
+		window.draw(eggy2small[i]);
+	}
+	for (int i = 0;i < 3;i++) {
+		window.draw(eggy1mid[i]);
+		window.draw(eggy2mid[i]);
+	}
+	for (int i = 0;i < 2;i++) {
+		window.draw(eggy1large[i]);
+		window.draw(eggy2large[i]);
+	}
+}
+
+void Graphics::drawplay(sf::RenderWindow& window) {
+	window.draw(bg_play);		// draw background
+	window.draw(backarrow);		// draw arrow
+	for (int i = 0; i < 3; i++) {	// draw eggyframe
+		window.draw(eggy1frame[i]);
+		window.draw(eggy2frame[i]);
+	}
+	drawNumeggy(window);	// draw Numeggyonframe
+	drawSq99(window);		// draw square
+	drawEggy(window);		//draw eggy
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 mainMenu::mainMenu(float width, float height)
 {
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
@@ -573,13 +573,6 @@ mainMenu::mainMenu(float width, float height)
 mainMenu::~mainMenu()
 {
 
-}
-
-void mainMenu::drawmenu(sf::RenderWindow& window, sf::Sprite bg_menu) {
-	window.draw(bg_menu);
-	for (int i = 0; i < MAX_ITEM; i++) {
-		window.draw(menu[i]);
-	}
 }
 
 void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
@@ -636,5 +629,12 @@ void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window)
 				window.close();
 			}
 		}
+	}
+}
+
+void mainMenu::drawmenu(sf::RenderWindow& window, sf::Sprite bg_menu) {
+	window.draw(bg_menu);
+	for (int i = 0; i < MAX_ITEM; i++) {
+		window.draw(menu[i]);
 	}
 }
