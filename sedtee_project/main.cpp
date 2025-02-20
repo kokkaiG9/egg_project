@@ -32,6 +32,7 @@ int main()
 
 		mainmenu.changecolorbuttonmenu(window); // เปลี่ยนสีปุ่มหน้าmenuตอนเอาเมาส์ชี้
 		mainmenu.changestatebutton(gamestate, window); // ปุ่มเปลี่ยนหน้าเกม
+		UI.changecolorsq99(window);
 		UI.draggingeggyandblabla(window); // dragging egg1,2
 
 
@@ -43,6 +44,7 @@ int main()
 				break;
 			case GameState::PLAY:
 				UI.drawplay(window);
+				UI.drawsq99(window);
 				break;
 			case GameState::TUTORIAL:
 				window.draw(UI.backarrow);

@@ -28,6 +28,63 @@ void Graphics::LoadAssets() {
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
 
+	//laod 9*9 [1,1]-[3,3] , greensq
+	texture_sq99_11.loadFromFile("allpng\\99cream.png");
+	texture_sq99_12.loadFromFile("allpng\\99cream.png");
+	texture_sq99_13.loadFromFile("allpng\\99cream.png");
+	texture_sq99_21.loadFromFile("allpng\\99cream.png");
+	texture_sq99_22.loadFromFile("allpng\\99cream.png");
+	texture_sq99_23.loadFromFile("allpng\\99cream.png");
+	texture_sq99_31.loadFromFile("allpng\\99cream.png");
+	texture_sq99_32.loadFromFile("allpng\\99cream.png");
+	texture_sq99_33.loadFromFile("allpng\\99cream.png");
+
+	texture_sq99green.loadFromFile("allpng\\99green.png");
+	sq99_11.setTexture(texture_sq99_11);
+	sq99_12.setTexture(texture_sq99_12);
+	sq99_13.setTexture(texture_sq99_13);
+	sq99_21.setTexture(texture_sq99_21);
+	sq99_22.setTexture(texture_sq99_22);
+	sq99_23.setTexture(texture_sq99_23);
+	sq99_31.setTexture(texture_sq99_31);
+	sq99_32.setTexture(texture_sq99_32);
+	sq99_33.setTexture(texture_sq99_33);
+	/*sq99green.setTexture(texture_sq99green);*/
+	//setscale sq99
+	sq99_11.setScale(0.475, 0.475);
+	sq99_12.setScale(0.475, 0.475);
+	sq99_13.setScale(0.475, 0.475);
+	sq99_21.setScale(0.475, 0.475);
+	sq99_22.setScale(0.475, 0.475);
+	sq99_23.setScale(0.475, 0.475);
+	sq99_31.setScale(0.475, 0.475);
+	sq99_32.setScale(0.475, 0.475);
+	sq99_33.setScale(0.475, 0.475);
+	sq99green.setScale(0.475, 0.475);
+	
+	//setpositon
+	sq99_11.setOrigin(sq99_11.getGlobalBounds().width / 2, sq99_11.getGlobalBounds().height / 2);
+	sq99_11.setPosition(675, 280);
+	sq99_12.setOrigin(sq99_12.getGlobalBounds().width / 2, sq99_12.getGlobalBounds().height / 2);
+	sq99_12.setPosition(905, 280);
+	sq99_13.setOrigin(sq99_13.getGlobalBounds().width / 2, sq99_13.getGlobalBounds().height / 2);
+	sq99_13.setPosition(1135, 280);
+	sq99_21.setOrigin(sq99_21.getGlobalBounds().width / 2, sq99_21.getGlobalBounds().height / 2);
+	sq99_21.setPosition(675,490);
+	sq99_22.setOrigin(sq99_22.getGlobalBounds().width / 2, sq99_22.getGlobalBounds().height / 2);
+	sq99_22.setPosition(905, 490);
+	sq99_23.setOrigin(sq99_23.getGlobalBounds().width / 2, sq99_23.getGlobalBounds().height / 2);
+	sq99_23.setPosition(1135, 490);
+	sq99_31.setOrigin(sq99_31.getGlobalBounds().width / 2, sq99_31.getGlobalBounds().height / 2);
+	sq99_31.setPosition(675, 700);
+	sq99_32.setOrigin(sq99_32.getGlobalBounds().width / 2, sq99_32.getGlobalBounds().height / 2);
+	sq99_32.setPosition(905, 700);
+	sq99_33.setOrigin(sq99_33.getGlobalBounds().width / 2, sq99_33.getGlobalBounds().height / 2);
+	sq99_33.setPosition(1135, 700);
+
+	
+
+
 	// load eggy1frame, eggy2frame
 	textureeggy1frame.loadFromFile("allpng\\eggy1frame.png");
 	textureeggy2frame.loadFromFile("allpng\\eggy2frame.png");
@@ -409,6 +466,87 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 	Numeggy2largeinframe = n2l;
 }
 
+//draw sq99 cream green//
+void Graphics::drawsq99(sf::RenderWindow& window)
+{
+	window.draw(sq99_11);
+	window.draw(sq99_12);
+	window.draw(sq99_13);
+	window.draw(sq99_21);
+	window.draw(sq99_22);
+	window.draw(sq99_23);
+	window.draw(sq99_31);
+	window.draw(sq99_32);
+	window.draw(sq99_33);
+	
+	 	
+}
+
+//change sq99 ro green//
+void Graphics::changecolorsq99(sf::RenderWindow& window)
+{
+	if (sq99_11.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_11.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_12.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_12.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_13.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_13.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_21.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_21.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_22.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_22.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_23.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_23.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_31.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_31.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_32.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_32.loadFromFile("allpng\\99green.png");
+		
+	}
+	else if (sq99_33.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texture_sq99_33.loadFromFile("allpng\\99green.png");
+		
+	}
+	else
+	{
+		texture_sq99_11.loadFromFile("allpng\\99cream.png");
+		texture_sq99_12.loadFromFile("allpng\\99cream.png");
+		texture_sq99_13.loadFromFile("allpng\\99cream.png");
+		texture_sq99_21.loadFromFile("allpng\\99cream.png");
+		texture_sq99_22.loadFromFile("allpng\\99cream.png");
+		texture_sq99_23.loadFromFile("allpng\\99cream.png");
+		texture_sq99_31.loadFromFile("allpng\\99cream.png");
+		texture_sq99_32.loadFromFile("allpng\\99cream.png");
+		texture_sq99_33.loadFromFile("allpng\\99cream.png");
+	}
+}
+
+
+
+//draw menu//
 mainMenu::mainMenu(float width, float height)
 {
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
@@ -466,7 +604,8 @@ void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
 		menu[2].setCharacterSize(45);
 		menu[2].setPosition(1592, 859);
 	}
-	else {
+	else 
+	{
 		for (int i = 0; i < 3; i++) {
 			menu[i].setFillColor(sf::Color::White);
 			menu[i].setCharacterSize(35);

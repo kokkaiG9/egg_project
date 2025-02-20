@@ -27,6 +27,16 @@ private:
 	sf::Texture texturenumber2;
 	sf::Texture texturenumber3;
 	sf::Texture texturebackarrow;
+	sf::Texture texture_sq99_11;
+	sf::Texture texture_sq99_12;
+	sf::Texture texture_sq99_13;
+	sf::Texture texture_sq99_21;
+	sf::Texture texture_sq99_22;
+	sf::Texture texture_sq99_23;
+	sf::Texture texture_sq99_31;
+	sf::Texture texture_sq99_32;
+	sf::Texture texture_sq99_33;
+	sf::Texture texture_sq99green;
 	bool isDragging = false;
 	int selectedeggy1small = -1, selectedeggy2small = -1;
 	int selectedeggy1mid = -1, selectedeggy2mid = -1;
@@ -47,6 +57,16 @@ public:
 	std::vector<sf::Sprite> eggy2frame; // 3frames
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
+	sf::Sprite sq99_11;
+	sf::Sprite sq99_12;
+	sf::Sprite sq99_13;
+	sf::Sprite sq99_21;
+	sf::Sprite sq99_22;
+	sf::Sprite sq99_23;
+	sf::Sprite sq99_31;
+	sf::Sprite sq99_32;
+	sf::Sprite sq99_33;
+	sf::Sprite sq99green;
 	sf::Sprite backarrow;
 
 	void LoadAssets();
@@ -54,6 +74,8 @@ public:
 	void draggingeggy(sf::Event);
 	void draggingeggyandblabla(sf::RenderWindow&);
 	void checkbackstage(sf::Event, GameState&);
+	void drawsq99(sf::RenderWindow&);
+	void changecolorsq99(sf::RenderWindow&);
 };
 
 class mainMenu
