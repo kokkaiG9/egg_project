@@ -301,6 +301,245 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 		}
 	}
 
+	//ลากวางบน sq99green posi+50 +50//
+	if (!isDragging) {
+		for (int i = 0; i < 3; i++) {
+			///eggy1///
+			//small size//
+			if (sq99_11.getGlobalBounds().contains(eggy1small[i].getPosition())) 
+			{
+				eggy1small[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy1small[i].getPosition())) 
+			{
+				eggy1small[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			{
+				eggy1small[i].setPosition(1185, 750);
+			}
+
+			//mid size//
+			
+			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			{
+				eggy1mid[i].setPosition(1185, 750);
+			}
+			//large size//
+			
+			if (sq99_11.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy1large[i].getPosition()))
+			{
+				eggy1large[i].setPosition(1185, 750);
+			}
+
+			///eggy2
+			//small size
+			
+			if (sq99_11.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			{
+				eggy2small[i].setPosition(1185, 750);
+			}
+
+			//mid size
+			
+			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy2mid[i].getPosition()))
+			{
+				eggy2mid[i].setPosition(1185, 750);
+			}
+
+			//large size
+		
+			if (sq99_11.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(725, 330);
+			}
+			if (sq99_12.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(955, 330);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(1185, 330);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(725, 540);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(955, 540);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(1185, 540);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(725, 750);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(955, 750);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy2large[i].getPosition()))
+			{
+				eggy2large[i].setPosition(1185, 750);
+			}
+		}
+	}
+
 	// สอดไส้/ของเเถม 
 	// นับจำนวนไข่ที่อยู่ในเฟรม
 	int n1s, n1m, n1l, n2s, n2m, n2l;
