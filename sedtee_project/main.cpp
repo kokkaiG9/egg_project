@@ -49,7 +49,7 @@ int main()
 				UI.drawplay(window);
 				break;
 			case GameState::TUTORIAL:
-				window.draw(UI.backarrow);
+				window.draw(UI.backarrowcream);
 				break;
 			default:
 				break;

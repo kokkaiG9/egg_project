@@ -14,15 +14,15 @@ void Graphics::LoadAssets() {
 		number.push_back(tempnumber);
 	}
 
-	// load backarrow
-	texturebackarrow.loadFromFile("allpng\\1_creamarrow.png");
-	/*texturebackarrow.loadFromFile("allpng\\2_greenarrow.png");*/
-	backarrow.setTexture(texturebackarrow);
-	
-	
+	// load backarrowcream,green
+	texturebackarrowcream.loadFromFile("allpng\\1_creamarrow.png");
+	texturebackarrowgreen.loadFromFile("allpng\\2_greenarrow.png");
+	backarrowcream.setTexture(texturebackarrowcream);
+	backarrowgreen.setTexture(texturebackarrowgreen);
 
 	// setPosition backarrow
-	backarrow.setPosition(25, 25);
+	backarrowcream.setPosition(25, 25);
+	backarrowgreen.setPosition(25, 25);
 
 	// load bg_menu, bg_play
 	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
@@ -578,23 +578,22 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 void Graphics::checkbackstage(sf::Event event, GameState& gamestate) {
 	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
 	{
-		if (backarrow.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+		if (backarrowgreen.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
 		{
 			gamestate = GameState::MENU;
 		}
 	}
 }
 
-//changecolorbacksarow??????
-void Graphics::changecolorbacksarow(sf::RenderWindow& window) 
+bool Graphics::changecolorbacksarow(sf::RenderWindow& window) 
 {
-	if (backarrow.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	if (backarrowcream.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 	{
-		texturebackarrow.loadFromFile("allpng\\2_greenarrow.png");
+		return true;
 	}
 	else 
 	{
-		texturebackarrow.loadFromFile("allpng\\1_creamarrow.png");
+		return false;
 	}
 	
 }
@@ -659,7 +658,6 @@ void Graphics::changecolorsq99(sf::RenderWindow& window)
 		texture_sq99_33.loadFromFile("allpng\\99cream.png");
 	}
 }
-
 
 void Graphics::drawNumeggy(sf::RenderWindow& window) {
 	for (int i = 0; i < 3; i++) {
@@ -790,9 +788,14 @@ void Graphics::drawEggy(sf::RenderWindow& window) {
 	}
 }
 
+void Graphics::drawbackarrow(sf::RenderWindow& window) {
+	if (changecolorbacksarow(window)) window.draw(backarrowgreen);
+	else window.draw(backarrowcream);
+}
+
 void Graphics::drawplay(sf::RenderWindow& window) {
 	window.draw(bg_play);		// draw background
-	window.draw(backarrow);		// draw arrow
+	drawbackarrow(window);		// draw arrow
 	for (int i = 0; i < 3; i++) {	// draw eggyframe
 		window.draw(eggy1frame[i]);
 		window.draw(eggy2frame[i]);

@@ -26,8 +26,8 @@ private:
 	sf::Texture texturenumber1;
 	sf::Texture texturenumber2;
 	sf::Texture texturenumber3;
-	sf::Texture texturebackarrow;
-	sf::Texture texturebackarrow2;
+	sf::Texture texturebackarrowcream;
+	sf::Texture texturebackarrowgreen;
 	sf::Texture texture_sq99_11;
 	sf::Texture texture_sq99_12;
 	sf::Texture texture_sq99_13;
@@ -68,18 +68,19 @@ public:
 	sf::Sprite sq99_32;
 	sf::Sprite sq99_33;
 	sf::Sprite sq99green;
-	sf::Sprite backarrow;
-	
+	sf::Sprite backarrowcream;
+	sf::Sprite backarrowgreen;
 
 	void LoadAssets();
 	void draggingeggy(sf::Event);
 	void draggingeggyandblabla(sf::RenderWindow&);
 	void checkbackstage(sf::Event, GameState&);
 	void changecolorsq99(sf::RenderWindow&);
-	void changecolorbacksarow(sf::RenderWindow&);
+	bool changecolorbacksarow(sf::RenderWindow&);
 	void drawNumeggy(sf::RenderWindow&);
 	void drawSq99(sf::RenderWindow&);
 	void drawEggy(sf::RenderWindow&);
+	void drawbackarrow(sf::RenderWindow&);
 	void drawplay(sf::RenderWindow&);
 };
 
