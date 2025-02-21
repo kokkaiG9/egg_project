@@ -15,8 +15,11 @@ void Graphics::LoadAssets() {
 	}
 
 	// load backarrow
-	texturebackarrow.loadFromFile("allpng\\backarrow.png");
+	texturebackarrow.loadFromFile("allpng\\1_creamarrow.png");
+	/*texturebackarrow.loadFromFile("allpng\\2_greenarrow.png");*/
 	backarrow.setTexture(texturebackarrow);
+	
+	
 
 	// setPosition backarrow
 	backarrow.setPosition(25, 25);
@@ -582,6 +585,20 @@ void Graphics::checkbackstage(sf::Event event, GameState& gamestate) {
 	}
 }
 
+//changecolorbacksarow??????
+void Graphics::changecolorbacksarow(sf::RenderWindow& window) 
+{
+	if (backarrow.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		texturebackarrow.loadFromFile("allpng\\2_greenarrow.png");
+	}
+	else 
+	{
+		texturebackarrow.loadFromFile("allpng\\1_creamarrow.png");
+	}
+	
+}
+
 void Graphics::changecolorsq99(sf::RenderWindow& window)
 {
 	if (sq99_11.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
@@ -642,6 +659,7 @@ void Graphics::changecolorsq99(sf::RenderWindow& window)
 		texture_sq99_33.loadFromFile("allpng\\99cream.png");
 	}
 }
+
 
 void Graphics::drawNumeggy(sf::RenderWindow& window) {
 	for (int i = 0; i < 3; i++) {
