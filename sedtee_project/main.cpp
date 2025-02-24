@@ -1,4 +1,5 @@
 #include "Graphics.h"
+#include "Logic.h"
 
 int main()
 {
@@ -9,6 +10,10 @@ int main()
 
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
 	GameState gamestate = GameState::MENU;
+
+
+	CountdownTimer timer(10);
+
 
 	while (window.isOpen())
 	{
@@ -38,6 +43,13 @@ int main()
 			UI.changecolorsq99(window);		// เปลี่ยนสีตารางเวลาเมาส์ชี้
 			UI.draggingeggyandblabla(window);		// dragging egg1,2
 		}
+
+		if (timer.getTimeLeft() == 0) {
+			timer.reset();
+		}
+		timer.update();
+		std::cout << timer.getTimeLeft() << std::endl;
+
 
 		window.clear();
 
