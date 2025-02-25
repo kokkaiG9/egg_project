@@ -18,7 +18,7 @@ public:
 
     // Reset the timer to the starting time
     void reset() {
-        timeLeft = 5;  // Reset to 20 seconds
+        timeLeft = 10;  // Reset to 20 seconds
     }
 
     // Return the time left in seconds

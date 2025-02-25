@@ -26,7 +26,7 @@ int main()
 			if (gamestate == GameState::PLAY) 
 			{
 				UI.checkbackstage(event, gamestate);
-				UI.draggingeggy(event);		// dragging eggy1,2
+				UI.draggingeggy(event, playerturn);		// dragging eggy1,2
 			}
 			if (gamestate == GameState::TUTORIAL)
 			{

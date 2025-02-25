@@ -77,7 +77,7 @@ public:
 	sf::Sprite backarrowgreen;
 
 	void LoadAssets();
-	void draggingeggy(sf::Event);
+	void draggingeggy(sf::Event, PlayerTurn);
 	void draggingeggyandblabla(sf::RenderWindow&);
 	void checkbackstage(sf::Event, GameState&);
 	void changecolorsq99(sf::RenderWindow&);
