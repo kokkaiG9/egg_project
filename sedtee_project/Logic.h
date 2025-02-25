@@ -9,7 +9,7 @@ public:
     // Call this function every frame to update the timer
     void update() {
         if (clock.getElapsedTime().asSeconds() >= 1) {
-            if (timeLeft > 0) {
+            if (timeLeft > -4) {
                 timeLeft--;
             }
             clock.restart();
@@ -18,7 +18,7 @@ public:
 
     // Reset the timer to the starting time
     void reset() {
-        timeLeft = 20;  // Reset to 20 seconds
+        timeLeft = 5;  // Reset to 20 seconds
     }
 
     // Return the time left in seconds

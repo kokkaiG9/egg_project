@@ -10,10 +10,9 @@ int main()
 
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
 	GameState gamestate = GameState::MENU;
+	PlayerTurn playerturn = PlayerTurn::NONT;
 
-
-	CountdownTimer timer(10);
-
+	CountdownTimer cdtime(-1);
 
 	while (window.isOpen())
 	{
@@ -42,13 +41,15 @@ int main()
 		if (gamestate == GameState::PLAY) {
 			UI.changecolorsq99(window);		// เปลี่ยนสีตารางเวลาเมาส์ชี้
 			UI.draggingeggyandblabla(window);		// dragging egg1,2
+			
+			if (cdtime.getTimeLeft() == -4) {		// countdown turn
+				if (playerturn == PlayerTurn::TAWAN) playerturn = PlayerTurn::NONT;
+				else playerturn = PlayerTurn::TAWAN;
+				cdtime.reset();
+			}
+			cdtime.update();
+			std::cout << cdtime.getTimeLeft();
 		}
-
-		if (timer.getTimeLeft() == 0) {
-			timer.reset();
-		}
-		timer.update();
-		std::cout << timer.getTimeLeft() << std::endl;
 
 
 		window.clear();

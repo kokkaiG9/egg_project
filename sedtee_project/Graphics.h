@@ -10,6 +10,11 @@ enum class GameState {
 	EXIT
 };
 
+enum class PlayerTurn {
+	TAWAN,
+	NONT
+};
+
 class Graphics {
 private:
 	sf::Texture textureeggy1small;
