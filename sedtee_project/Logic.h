@@ -6,7 +6,7 @@ class CountdownTimer {
 public:
     CountdownTimer(int startTime) : timeLeft(startTime) {}
 
-    // Call this function every frame to update the timer
+// update time !!!(call this function every frame)!!!
     void update() {
         if (clock.getElapsedTime().asSeconds() >= 1) {
             if (timeLeft > -5) {
@@ -16,17 +16,17 @@ public:
         }
     }
 
-    // Reset the timer to the starting time
+// reset time
     void reset() {
-        timeLeft = 20;  // Reset to 20 seconds
+        timeLeft = 20;      // time per turn
     }
 
-    // Return the time left in seconds
+// return timeleft
     int getTimeLeft() const {
         return timeLeft;
     }
 
 private:
     int timeLeft;
-    sf::Clock clock;  // Used to track elapsed time
+    sf::Clock clock;
 };

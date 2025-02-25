@@ -13,7 +13,7 @@ enum class GameState {
 enum class PlayerTurn {
 	TAWAN,
 	NONT,
-	KT
+	NOONE
 };
 
 class Graphics {
@@ -54,15 +54,15 @@ private:
 	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
 
 public:
-	std::vector<sf::Sprite> eggy1small;		// 3ตัว
-	std::vector<sf::Sprite> eggy1mid;		// 3ตัว
-	std::vector<sf::Sprite> eggy1large;		// 2ตัว
-	std::vector<sf::Sprite> eggy2small;		// 3ตัว
-	std::vector<sf::Sprite> eggy2mid;		// 3ตัว
-	std::vector<sf::Sprite> eggy2large;		// 2ตัว
-	std::vector<sf::Sprite> number;			// 0,1,2,3
-	std::vector<sf::Sprite> eggy1frame;		// 3frames
-	std::vector<sf::Sprite> eggy2frame;		// 3frames
+	std::vector<sf::Sprite> eggy1small;		// n = 3
+	std::vector<sf::Sprite> eggy1mid;		// n = 3
+	std::vector<sf::Sprite> eggy1large;		// n = 2
+	std::vector<sf::Sprite> eggy2small;		// n = 3
+	std::vector<sf::Sprite> eggy2mid;		// n = 3
+	std::vector<sf::Sprite> eggy2large;		// n = 2
+	std::vector<sf::Sprite> number;			// (number of eggs) 0,1,2,3
+	std::vector<sf::Sprite> eggy1frame;		// frames = 3
+	std::vector<sf::Sprite> eggy2frame;		// frames = 3
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
 	sf::Sprite sq99_11;

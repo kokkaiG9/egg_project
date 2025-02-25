@@ -838,7 +838,7 @@ void Graphics::drawcdtime(sf::RenderWindow& window, int time, PlayerTurn playert
 		for (int i = 0; i < 21; i++) {
 			if (time == i) {
 				if (playerturn == PlayerTurn::TAWAN) cdtime[i].setPosition(20, 465);
-				else cdtime[i].setPosition(1700, 465);
+				else if (playerturn == PlayerTurn::NONT) cdtime[i].setPosition(1700, 465);
 				window.draw(cdtime[i]);
 				break;
 			}
@@ -858,8 +858,6 @@ void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playe
 	drawcdtime(window, timeleft, playerturn);		// draw cdtime
 	drawEggy(window);		//draw eggy
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 mainMenu::mainMenu(float width, float height)
 {

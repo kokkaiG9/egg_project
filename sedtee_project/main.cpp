@@ -1,17 +1,29 @@
 #include "Graphics.h"
 #include "Logic.h"
+#include <SFML/Audio.hpp>
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Eggy of Tawan&Nont !!!");
 
+// SOUND BACKGROUND
+	sf::Music bgMusic;
+	if (!bgMusic.openFromFile("Free-Free-Lofi-Music-_For-YouTube_-After-the-Rain-by-Tokyo-Music-Walker.ogg"))
+	{
+		std::cerr << "Error loading music file!" << std::endl;
+		return -1;
+	}
+	bgMusic.setVolume(10);		// suggestion: turn volume window to 60
+	bgMusic.setLoop(true);
+	bgMusic.play();
+// UI
 	Graphics UI;
 	UI.LoadAssets();
 
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
-
+// GAMEPLAY
 	GameState gamestate = GameState::MENU;
-	PlayerTurn playerturn = PlayerTurn::KT;
+	PlayerTurn playerturn = PlayerTurn::NOONE;
 	CountdownTimer cdtime(-1);
 	int turn = 1;
 
@@ -36,15 +48,15 @@ int main()
 		}
 
 		if (gamestate == GameState::MENU) {
-			mainmenu.changecolorbuttonmenu(window);		// เปลี่ยนสีปุ่มหน้าmenuตอนเอาเมาส์ชี้
-			mainmenu.changestatebutton(gamestate, window);		// ปุ่มเปลี่ยนหน้าเกม
+			mainmenu.changecolorbuttonmenu(window);		// menu:changecolorbutton
+			mainmenu.changestatebutton(gamestate, window);		// change GAMESTAGE
 		}
 		if (gamestate == GameState::PLAY) {
-			UI.changecolorsq99(window);		// เปลี่ยนสีตารางเวลาเมาส์ชี้
+			UI.changecolorsq99(window);		// play:changecolorboard
 			UI.draggingeggyandblabla(window);		// dragging egg1,2
-			// countdown turn
+		// time-countdown per turn
 			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3 || cdtime.getTimeLeft() == -4) {
-				playerturn = PlayerTurn::KT;
+				playerturn = PlayerTurn::NOONE;
 			}
 			else if (cdtime.getTimeLeft() == -5) {
 				if (turn%2 == 1) playerturn = PlayerTurn::TAWAN;
@@ -79,4 +91,11 @@ int main()
 	
 	return 0;
 }
+
+// to do list : (2 days to die)
+// - ลำดับการวาดไข่ (เดี๋ยวตะวันทำสักวันนึงรอก่อน)
+// - เช็คคนชนะ (นนทกทำด้วย)
+// - เช็คว่าวางไข่ตรงนี้ได้ไหม (ทอฟฟี่ทำป่าววะ ใช่เเหละ)
+// - หน้า tutorial (someone) 
+// - หน้า ending + summary (someone)
 
