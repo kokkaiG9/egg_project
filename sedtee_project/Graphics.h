@@ -12,7 +12,8 @@ enum class GameState {
 
 enum class PlayerTurn {
 	TAWAN,
-	NONT
+	NONT,
+	KT
 };
 
 class Graphics {
@@ -43,6 +44,7 @@ private:
 	sf::Texture texture_sq99_32;
 	sf::Texture texture_sq99_33;
 	sf::Texture texture_sq99green;
+	sf::Texture texturecdtime[25];
 	bool isDragging = false;
 	int selectedeggy1small = -1, selectedeggy2small = -1;
 	int selectedeggy1mid = -1, selectedeggy2mid = -1;
@@ -75,6 +77,7 @@ public:
 	sf::Sprite sq99green;
 	sf::Sprite backarrowcream;
 	sf::Sprite backarrowgreen;
+	std::vector<sf::Sprite> cdtime;
 
 	void LoadAssets();
 	void draggingeggy(sf::Event, PlayerTurn);
@@ -86,7 +89,8 @@ public:
 	void drawSq99(sf::RenderWindow&);
 	void drawEggy(sf::RenderWindow&);
 	void drawbackarrow(sf::RenderWindow&);
-	void drawplay(sf::RenderWindow&);
+	void drawcdtime(sf::RenderWindow&, int, PlayerTurn);
+	void drawplay(sf::RenderWindow&, int, PlayerTurn);
 };
 
 class mainMenu

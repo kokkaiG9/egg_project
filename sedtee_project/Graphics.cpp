@@ -31,7 +31,7 @@ void Graphics::LoadAssets() {
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
 
-	//laod 9*9 [1,1]-[3,3] , greensq
+	//load 9*9 [1,1]-[3,3] , greensq
 	texture_sq99_11.loadFromFile("allpng\\99cream.png");
 	texture_sq99_12.loadFromFile("allpng\\99cream.png");
 	texture_sq99_13.loadFromFile("allpng\\99cream.png");
@@ -174,6 +174,41 @@ void Graphics::LoadAssets() {
 		eggy1large[i].setPosition(125, 874.22);
 		eggy2large[i].setPosition(1790, 146);
 	}
+
+	// load cdtime
+	texturecdtime[0].loadFromFile("allpng\\00.png");
+	texturecdtime[1].loadFromFile("allpng\\01.png");
+	texturecdtime[2].loadFromFile("allpng\\02.png");
+	texturecdtime[3].loadFromFile("allpng\\03.png");
+	texturecdtime[4].loadFromFile("allpng\\04.png");
+	texturecdtime[5].loadFromFile("allpng\\05.png");
+	texturecdtime[6].loadFromFile("allpng\\06.png");
+	texturecdtime[7].loadFromFile("allpng\\07.png");
+	texturecdtime[8].loadFromFile("allpng\\08.png");
+	texturecdtime[9].loadFromFile("allpng\\09.png");
+	texturecdtime[10].loadFromFile("allpng\\10.png");
+	texturecdtime[11].loadFromFile("allpng\\11.png");
+	texturecdtime[12].loadFromFile("allpng\\12.png");
+	texturecdtime[13].loadFromFile("allpng\\13.png");
+	texturecdtime[14].loadFromFile("allpng\\14.png");
+	texturecdtime[15].loadFromFile("allpng\\15.png");
+	texturecdtime[16].loadFromFile("allpng\\16.png");
+	texturecdtime[17].loadFromFile("allpng\\17.png");
+	texturecdtime[18].loadFromFile("allpng\\18.png");
+	texturecdtime[19].loadFromFile("allpng\\19.png");
+	texturecdtime[20].loadFromFile("allpng\\20.png");
+	texturecdtime[21].loadFromFile("allpng\\00.1.png");
+	texturecdtime[22].loadFromFile("allpng\\01.1.png");
+	texturecdtime[23].loadFromFile("allpng\\02.1.png");
+	texturecdtime[24].loadFromFile("allpng\\03.1.png");
+
+	sf::Sprite tempcdtime;
+	for (int i = 0; i < 25; i++) {
+		tempcdtime.setTexture(texturecdtime[i]);
+		cdtime.push_back(tempcdtime);
+	}
+	
+	for (int i = 21; i < 25; i++) cdtime[i].setPosition(860, 20);
 }
 
 void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
@@ -794,7 +829,24 @@ void Graphics::drawbackarrow(sf::RenderWindow& window) {
 	else window.draw(backarrowcream);
 }
 
-void Graphics::drawplay(sf::RenderWindow& window) {
+void Graphics::drawcdtime(sf::RenderWindow& window, int time, PlayerTurn playerturn) {
+	if (time == -1) window.draw(cdtime[24]);
+	else if (time == -2) window.draw(cdtime[23]);
+	else if (time == -3) window.draw(cdtime[22]);
+	else if (time == -4) window.draw(cdtime[21]);
+	else {
+		for (int i = 0; i < 21; i++) {
+			if (time == i) {
+				if (playerturn == PlayerTurn::TAWAN) cdtime[i].setPosition(20, 465);
+				else cdtime[i].setPosition(1700, 465);
+				window.draw(cdtime[i]);
+				break;
+			}
+		}
+	}
+}
+
+void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playerturn) {
 	window.draw(bg_play);		// draw background
 	drawbackarrow(window);		// draw arrow
 	for (int i = 0; i < 3; i++) {	// draw eggyframe
@@ -803,6 +855,7 @@ void Graphics::drawplay(sf::RenderWindow& window) {
 	}
 	drawNumeggy(window);	// draw Numeggyonframe
 	drawSq99(window);		// draw square
+	drawcdtime(window, timeleft, playerturn);		// draw cdtime
 	drawEggy(window);		//draw eggy
 }
 
