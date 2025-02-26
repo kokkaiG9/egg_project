@@ -87,9 +87,9 @@ public:
 	bool changecolorbacksarow(sf::RenderWindow&);
 	void drawNumeggy(sf::RenderWindow&);
 	void drawSq99(sf::RenderWindow&);
-	void drawEggy(sf::RenderWindow&);
 	void drawbackarrow(sf::RenderWindow&);
 	void drawcdtime(sf::RenderWindow&, int, PlayerTurn);
+	void drawEggy(sf::RenderWindow&, PlayerTurn);
 	void drawplay(sf::RenderWindow&, int, PlayerTurn);
 };
 

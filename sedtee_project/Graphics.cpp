@@ -317,6 +317,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 		eggy2large[selectedeggy2large].setPosition(sf::Vector2f(sf::Mouse::getPosition(window)) + offset);
 	}
 
+	// eggy on frame
 	if (!isDragging) {
 		for (int i = 0; i < 3; i++) {
 			if (eggy1frame[0].getGlobalBounds().contains(eggy1small[i].getPosition())) {
@@ -340,11 +341,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 		}
 	}
 
-	//ลากวางบน sq99green posi+50 +50//
+	// eggy on grid
 	if (!isDragging) {
 		for (int i = 0; i < 3; i++) {
-			///eggy1///
-			//small size//
+		///eggy1///
+			//small size
 			if (sq99_11.getGlobalBounds().contains(eggy1small[i].getPosition())) 
 			{
 				eggy1small[i].setPosition(725, 330);
@@ -382,8 +383,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 				eggy1small[i].setPosition(1185, 750);
 			}
 
-			//mid size//
-			
+			//mid size
 			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(725, 330);
@@ -420,8 +420,8 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			{
 				eggy1mid[i].setPosition(1185, 750);
 			}
+
 			//large size//
-			
 			if (sq99_11.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(725, 330);
@@ -459,9 +459,8 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 				eggy1large[i].setPosition(1185, 750);
 			}
 
-			///eggy2
+		///eggy2///
 			//small size
-			
 			if (sq99_11.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(725, 330);
@@ -500,7 +499,6 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			}
 
 			//mid size
-			
 			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(725, 330);
@@ -539,7 +537,6 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			}
 
 			//large size
-		
 			if (sq99_11.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(725, 330);
@@ -579,7 +576,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 		}
 	}
 
-	// สอดไส้/ของเเถม 
+	// qwertyuiopasdfghjklzxcvbnm
 	// นับจำนวนไข่ที่อยู่ในเฟรม
 	int n1s, n1m, n1l, n2s, n2m, n2l;
 	n1s = n1m = n1l = n2s = n2m = n2l = 0;
@@ -809,21 +806,6 @@ void Graphics::drawSq99(sf::RenderWindow& window) {
 	window.draw(sq99_33);
 }
 
-void Graphics::drawEggy(sf::RenderWindow& window) {
-	for (int i = 0;i < 3;i++) {
-		window.draw(eggy1small[i]);
-		window.draw(eggy2small[i]);
-	}
-	for (int i = 0;i < 3;i++) {
-		window.draw(eggy1mid[i]);
-		window.draw(eggy2mid[i]);
-	}
-	for (int i = 0;i < 2;i++) {
-		window.draw(eggy1large[i]);
-		window.draw(eggy2large[i]);
-	}
-}
-
 void Graphics::drawbackarrow(sf::RenderWindow& window) {
 	if (changecolorbacksarow(window)) window.draw(backarrowgreen);
 	else window.draw(backarrowcream);
@@ -846,6 +828,51 @@ void Graphics::drawcdtime(sf::RenderWindow& window, int time, PlayerTurn playert
 	}
 }
 
+void Graphics::drawEggy(sf::RenderWindow& window, PlayerTurn playerturn) {
+	if (playerturn == PlayerTurn::TAWAN) {
+		for (int i = 0; i < 3; i++) {
+			window.draw(eggy2small[i]);
+			window.draw(eggy1small[i]);
+			window.draw(eggy2mid[i]);
+			window.draw(eggy1mid[i]);
+		}
+		for (int i = 0; i < 2; i++) {
+			window.draw(eggy2large[i]);
+			window.draw(eggy1large[i]);
+		}
+		if (isDragging && selectedeggy1small != -1) window.draw(eggy1small[selectedeggy1small]);
+		else if (isDragging && selectedeggy1mid != -1) window.draw(eggy1mid[selectedeggy1mid]);
+		else if (isDragging && selectedeggy1large != -1) window.draw(eggy1large[selectedeggy1large]);
+	}
+	else if (playerturn == PlayerTurn::NONT) {
+		for (int i = 0; i < 3; i++) {
+			window.draw(eggy1small[i]);
+			window.draw(eggy2small[i]);
+			window.draw(eggy1mid[i]);
+			window.draw(eggy2mid[i]);
+		}
+		for (int i = 0; i < 2; i++) {
+			window.draw(eggy1large[i]);
+			window.draw(eggy2large[i]);
+		}
+		if (isDragging && selectedeggy2small != -1) window.draw(eggy2small[selectedeggy2small]);
+		else if (isDragging && selectedeggy2mid != -1) window.draw(eggy2mid[selectedeggy2mid]);
+		else if (isDragging && selectedeggy2large != -1) window.draw(eggy2large[selectedeggy2large]);
+	}
+	else {
+		for (int i = 0; i < 3; i++) {
+			window.draw(eggy1small[i]);
+			window.draw(eggy2small[i]);
+			window.draw(eggy1mid[i]);
+			window.draw(eggy2mid[i]);
+		}
+		for (int i = 0; i < 2; i++) {
+			window.draw(eggy1large[i]);
+			window.draw(eggy2large[i]);
+		}
+	}
+}
+
 void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playerturn) {
 	window.draw(bg_play);		// draw background
 	drawbackarrow(window);		// draw arrow
@@ -855,8 +882,8 @@ void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playe
 	}
 	drawNumeggy(window);	// draw Numeggyonframe
 	drawSq99(window);		// draw square
-	drawcdtime(window, timeleft, playerturn);		// draw cdtime
-	drawEggy(window);		//draw eggy
+	drawcdtime(window, timeleft, playerturn);		// draw countdowntime
+	drawEggy(window, playerturn);		//draw eggy
 }
 
 mainMenu::mainMenu(float width, float height)
