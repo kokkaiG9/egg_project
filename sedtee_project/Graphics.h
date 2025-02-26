@@ -77,6 +77,7 @@ public:
 	sf::Sprite sq99green;
 	sf::Sprite backarrowcream;
 	sf::Sprite backarrowgreen;
+	int board[3][3] = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0} };
 	std::vector<sf::Sprite> cdtime;
 
 	void LoadAssets();

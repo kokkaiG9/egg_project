@@ -76,6 +76,13 @@ int main()
 				break;
 			case GameState::PLAY:
 				UI.drawplay(window, cdtime.getTimeLeft(), playerturn);
+				for (int i = 0; i < 3; i++) {
+					for (int j = 0; j < 3; j++) {
+						std::cout << UI.board[i][j] << " ";
+					}
+					std::cout << "\n";
+					
+				}
 				break;
 			case GameState::TUTORIAL:
 				window.draw(UI.backarrowcream);
