@@ -4,7 +4,11 @@
 
 class CountdownTimer {
 public:
-    CountdownTimer(int startTime) : timeLeft(startTime) {}
+    CountdownTimer() : timeLeft(0) {}
+
+    void setTimeLeft(int startTime) {
+        timeLeft = startTime;
+    }
 
 // update time !!!(call this function every frame)!!!
     void update() {

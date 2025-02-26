@@ -81,6 +81,7 @@ public:
 	int board[3][3] = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0} };
 	std::vector<sf::Sprite> cdtime;
 
+	~Graphics();
 	void LoadAssets();
 	void draggingeggy(sf::Event, PlayerTurn);
 	void draggingeggyandblabla(sf::RenderWindow&);

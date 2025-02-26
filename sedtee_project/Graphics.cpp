@@ -1,5 +1,9 @@
 #include "Graphics.h"
 
+Graphics::~Graphics() {
+	
+}
+
 void Graphics::LoadAssets() {
 	// load number0,1,2,3
 	texturenumber0.loadFromFile("allpng\\number0.png");
