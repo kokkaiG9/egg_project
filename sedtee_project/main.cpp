@@ -26,6 +26,8 @@ int main()
 	PlayerTurn playerturn = PlayerTurn::NOONE;
 	CountdownTimer cdtime(-1);
 	int turn = 1;
+	TicTacToe checkwinner;
+	int winner;
 
 	while (window.isOpen())
 	{
@@ -54,6 +56,7 @@ int main()
 		if (gamestate == GameState::PLAY) {
 			UI.changecolorsq99(window);		// play:changecolorboard
 			UI.draggingeggyandblabla(window);		// dragging egg1,2
+			checkwinner.grid(UI.board);
 		// time-countdown per turn
 			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3 || cdtime.getTimeLeft() == -4) {
 				playerturn = PlayerTurn::NOONE;
@@ -65,8 +68,27 @@ int main()
 				cdtime.reset();
 			}
 			cdtime.update();
+
+			winner = checkwinner.checkWinner(UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe);
+			if (winner == 1) {
+				std::cout << "winner: TAWAN\n";
+				//gamestate = GameState::END;
+			}
+			else if (winner == 2) {
+				std::cout << "winner: NONT\n";
+				//gamestate = GameState::END;
+			}
 		}
 
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				std::cout << checkwinner.board[i][j] << " ";
+			}
+			std::cout << std::endl;
+		}
+		std::cout << std::endl;
+		std::cout << std::endl;
+		std::cout << std::endl;
 
 		window.clear();
 		
@@ -76,15 +98,11 @@ int main()
 				break;
 			case GameState::PLAY:
 				UI.drawplay(window, cdtime.getTimeLeft(), playerturn);
-				for (int i = 0; i < 3; i++) {
-					for (int j = 0; j < 3; j++) {
-						std::cout << UI.board[i][j] << " ";
-					}
-					std::cout << "\n";
-					
-				}
 				break;
 			case GameState::TUTORIAL:
+				window.draw(UI.backarrowcream);
+				break;
+			case GameState::END:
 				window.draw(UI.backarrowcream);
 				break;
 			default:

@@ -7,13 +7,14 @@ enum class GameState {
 	MENU,
 	PLAY,
 	TUTORIAL,
-	EXIT
+	EXIT,
+	END
 };
 
 enum class PlayerTurn {
-	TAWAN,
-	NONT,
-	NOONE
+	TAWAN = 1,
+	NONT = 2,
+	NOONE = 0
 };
 
 class Graphics {
@@ -50,8 +51,6 @@ private:
 	int selectedeggy1mid = -1, selectedeggy2mid = -1;
 	int selectedeggy1large = -1, selectedeggy2large = -1;
 	sf::Vector2f offset;
-	int Numeggy1smallinframe = NULL, Numeggy1midinframe = NULL, Numeggy1largeinframe = NULL;
-	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
 
 public:
 	std::vector<sf::Sprite> eggy1small;		// n = 3
@@ -63,6 +62,8 @@ public:
 	std::vector<sf::Sprite> number;			// (number of eggs) 0,1,2,3
 	std::vector<sf::Sprite> eggy1frame;		// frames = 3
 	std::vector<sf::Sprite> eggy2frame;		// frames = 3
+	int Numeggy1smallinframe = NULL, Numeggy1midinframe = NULL, Numeggy1largeinframe = NULL;
+	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
 	sf::Sprite sq99_11;
