@@ -51,6 +51,8 @@ int main()
 			if (gamestate == GameState::END)
 			{
 				//UI.checkbackstage(event, gamestate);
+				eenndd.changecolorbutton_end(window);
+				eenndd.changestate_end_button(gamestate, window, winner);
 			}
 		}
 
@@ -126,6 +128,7 @@ int main()
 				break;
 			case GameState::END:
 				UI.drawend(window, winner);
+				eenndd.drawbacktext(window);
 				break;
 			default:
 				break;

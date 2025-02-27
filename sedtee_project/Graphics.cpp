@@ -959,7 +959,9 @@ END::END(float width, float height)
 
 	t_end.setFont(font_end);
 	t_end.setString("BACK");
+	t_end.setCharacterSize(50);
 	t_end.setOrigin(t_end.getGlobalBounds().width / 2, t_end.getGlobalBounds().height / 2);
+	t_end.setPosition(1692, 882);
 }
 END::~END()
 {
@@ -970,19 +972,20 @@ void END::changecolorbutton_end(sf::RenderWindow& window) {
 	if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 	{
 		t_end.setFillColor(sf::Color::Red);
-		t_end.setCharacterSize(45);
-		t_end.setOutlineColor(sf::Color::White);
-		t_end.setPosition(1587, 431);//มาเซท
+		t_end.setCharacterSize(60);
+		t_end.setOutlineColor(sf::Color::Green);
+		t_end.setPosition(1692, 882);//มาเซท
 	}
 	else
 	{
 	
 		t_end.setFillColor(sf::Color::White);
-		t_end.setCharacterSize(35);
+		t_end.setCharacterSize(60);
 		t_end.setOutlineColor(sf::Color::Black);
 		t_end.setOutlineThickness(3);
+		t_end.setPosition(1692, 882);
 	}
-		t_end.setPosition(1598, 438);//,kg:m
+		
 		
 	
 }
@@ -1000,6 +1003,11 @@ void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window,
 			
 		}
 	}
+}
+
+void END::drawbacktext(sf::RenderWindow& window)
+{
+	window.draw(t_end);
 }
 
 mainMenu::mainMenu(float width, float height)

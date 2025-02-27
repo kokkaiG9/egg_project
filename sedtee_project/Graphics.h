@@ -115,6 +115,7 @@ public:
 	void drawmenu(sf::RenderWindow& , sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
 	void changestatebutton(GameState&, sf::RenderWindow&);
+	
 };
 
 
@@ -131,5 +132,5 @@ public:
 
 	void changecolorbutton_end(sf::RenderWindow&);
 	void changestate_end_button(GameState&, sf::RenderWindow&, int&);
-	
+	void drawbacktext(sf::RenderWindow&);
 };
