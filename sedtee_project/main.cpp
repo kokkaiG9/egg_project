@@ -20,6 +20,7 @@ int main()
 	Graphics UI;
 	UI.LoadAssets();
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
+	END eenndd(window.getSize().x, window.getSize().y);
 // GAMEPLAY
 	GameState gamestate = GameState::MENU;
 	PlayerTurn playerturn = PlayerTurn::NOONE;
@@ -125,7 +126,7 @@ int main()
 				window.draw(UI.backarrowcream);
 				break;
 			case GameState::END:
-				window.draw(UI.backarrowcream);
+				eenndd.drawend(window,UI.bg_end);
 				break;
 			default:
 				break;

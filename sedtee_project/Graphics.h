@@ -29,6 +29,8 @@ private:
 	sf::Texture textureeggy2frame;
 	sf::Texture texturebg_menu;
 	sf::Texture texturebg_play;
+	sf::Texture texturebg_end1;
+	sf::Texture texturebg_end2;
 	sf::Texture texturenumber0;
 	sf::Texture texturenumber1;
 	sf::Texture texturenumber2;
@@ -66,6 +68,8 @@ public:
 	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
+	sf::Sprite bg_end1;
+	sf::Sprite bg_end2;
 	sf::Sprite sq99_11;
 	sf::Sprite sq99_12;
 	sf::Sprite sq99_13;
@@ -94,6 +98,7 @@ public:
 	void drawcdtime(sf::RenderWindow&, int, PlayerTurn);
 	void drawEggy(sf::RenderWindow&, PlayerTurn);
 	void drawplay(sf::RenderWindow&, int, PlayerTurn);
+	
 };
 
 class mainMenu
@@ -107,7 +112,25 @@ public:
 	mainMenu(float width, float hight);
 	~mainMenu();
 
-	void drawmenu(sf::RenderWindow& window, sf::Sprite);
+	void drawmenu(sf::RenderWindow& , sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
 	void changestatebutton(GameState&, sf::RenderWindow&);
+};
+
+
+class END
+{
+private:
+	int selectedIteem = 0;
+	sf::Font font_end;
+
+public:
+	sf::Text t_end;
+	END(float width, float hight);
+	~END();
+
+	void drawend(sf::RenderWindow&, sf::Sprite);
+	void changecolorbutton_end(sf::RenderWindow&);
+	void changestate_end_button(GameState&, sf::RenderWindow&);
+	
 };

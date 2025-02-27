@@ -29,11 +29,15 @@ void Graphics::LoadAssets() {
 	backarrowcream.setPosition(25, 25);
 	backarrowgreen.setPosition(25, 25);
 
-	// load bg_menu, bg_play
+	// load bg_menu, bg_play, bg_end
 	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
 	texturebg_play.loadFromFile("allpng\\bg_play.png");
+	texturebg_end1.loadFromFile("allpng\\bg_end1.png");
+	texturebg_end2.loadFromFile("allpng\\bg_end2.png");
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
+	bg_end1.setTexture(texturebg_end1);
+	bg_end2.setTexture(texturebg_end2);
 
 	//load 9*9 [1,1]-[3,3] , greensq
 	texture_sq99_11.loadFromFile("allpng\\99cream.png");
@@ -942,6 +946,77 @@ void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playe
 	drawEggy(window, playerturn);		//draw eggy
 }
 
+///////////////eeeeeennnnnnnnndddddddddd
+END::END(float width, float height)
+{
+	if (!font_end.loadFromFile("Montserrat-ExtraBold.ttf")) {
+		std::cerr << "Error: äÁèÊÒÁÒÃ¶âËÅ´¿Í¹µì!" << std::endl;
+	}
+
+	t_end.setFont(font_end);
+	t_end.setString("BACK");
+	t_end.setOrigin(t_end.getGlobalBounds().width / 2, t_end.getGlobalBounds().height / 2);
+}
+END::~END()
+{
+
+}
+
+void END::changecolorbutton_end(sf::RenderWindow& window) {
+	if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		t_end.setFillColor(sf::Color::Red);
+		t_end.setCharacterSize(45);
+		t_end.setOutlineColor(sf::Color::White);
+		t_end.setPosition(1587, 431);//ÁÒà«·
+	}
+	else
+	{
+	
+		t_end.setFillColor(sf::Color::White);
+		t_end.setCharacterSize(35);
+		t_end.setOutlineColor(sf::Color::Black);
+		t_end.setOutlineThickness(3);
+	}
+		t_end.setPosition(1598, 438);//,kg:m
+		
+	
+}
+
+void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window) {
+	if (gamestate == GameState::END)
+	{
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+			{
+				gamestate = GameState::MENU;
+			}
+			
+		}
+	}
+}
+
+
+
+void END::drawend(sf::RenderWindow& window, sf::Sprite bg_end)
+{
+	/*if (winner == 1)
+	{
+		texturebg_end.loadFromFile("allpng\\bg_end1.png");
+		bg_end.setTexture(texturebg_end);
+	}
+	else if
+	{
+		texturebg_end.loadFromFile("allpng\\bg_end2.png");
+		bg_end.setTexture(texturebg_end);
+	}*/
+	window.draw(bg_end);
+	window.draw(t_end);
+
+}
+
+
 mainMenu::mainMenu(float width, float height)
 {
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
@@ -1005,6 +1080,8 @@ void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
 		menu[2].setPosition(1604, 864);
 	}
 }
+
+
 
 void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window) {
 	if (gamestate == GameState::MENU)
