@@ -98,7 +98,7 @@ public:
 	void drawcdtime(sf::RenderWindow&, int, PlayerTurn);
 	void drawEggy(sf::RenderWindow&, PlayerTurn);
 	void drawplay(sf::RenderWindow&, int, PlayerTurn);
-	
+	void drawend(sf::RenderWindow&, int);
 };
 
 class mainMenu
@@ -129,8 +129,7 @@ public:
 	END(float width, float hight);
 	~END();
 
-	void drawend(sf::RenderWindow&, sf::Sprite);
 	void changecolorbutton_end(sf::RenderWindow&);
-	void changestate_end_button(GameState&, sf::RenderWindow&);
+	void changestate_end_button(GameState&, sf::RenderWindow&, int&);
 	
 };

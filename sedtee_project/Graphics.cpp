@@ -1,4 +1,4 @@
-#include "Graphics.h"
+﻿#include "Graphics.h"
 
 Graphics::~Graphics() {
 	
@@ -631,7 +631,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 	}
 
 	// qwertyuiopasdfghjklzxcvbnm
-	// �Ѻ�ӹǹ������������
+	// นับจำนวนไข่ที่อยู่ในเฟรม
 	int n1s, n1m, n1l, n2s, n2m, n2l;
 	n1s = n1m = n1l = n2s = n2m = n2l = 0;
 	for (int i = 0; i < 3; i++) {
@@ -946,11 +946,15 @@ void Graphics::drawplay(sf::RenderWindow& window, int timeleft, PlayerTurn playe
 	drawEggy(window, playerturn);		//draw eggy
 }
 
-///////////////eeeeeennnnnnnnndddddddddd
+void Graphics::drawend(sf::RenderWindow& window, int winneris) {
+	if (winneris == 1) window.draw(bg_end1);
+	else if (winneris == 2) window.draw(bg_end2);
+}
+
 END::END(float width, float height)
 {
 	if (!font_end.loadFromFile("Montserrat-ExtraBold.ttf")) {
-		std::cerr << "Error: �������ö��Ŵ�͹��!" << std::endl;
+		std::cerr << "Error: äÁèÊÒÁÒÃ¶âËÅ´¿Í¹µì!" << std::endl;
 	}
 
 	t_end.setFont(font_end);
@@ -968,7 +972,7 @@ void END::changecolorbutton_end(sf::RenderWindow& window) {
 		t_end.setFillColor(sf::Color::Red);
 		t_end.setCharacterSize(45);
 		t_end.setOutlineColor(sf::Color::White);
-		t_end.setPosition(1587, 431);//��૷
+		t_end.setPosition(1587, 431);//มาเซท
 	}
 	else
 	{
@@ -983,7 +987,7 @@ void END::changecolorbutton_end(sf::RenderWindow& window) {
 	
 }
 
-void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window) {
+void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window, int& winner) {
 	if (gamestate == GameState::END)
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -991,44 +995,25 @@ void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window)
 			if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 			{
 				gamestate = GameState::MENU;
+				winner = NULL;
 			}
 			
 		}
 	}
 }
 
-
-
-void END::drawend(sf::RenderWindow& window, sf::Sprite bg_end)
-{
-	/*if (winner == 1)
-	{
-		texturebg_end.loadFromFile("allpng\\bg_end1.png");
-		bg_end.setTexture(texturebg_end);
-	}
-	else if
-	{
-		texturebg_end.loadFromFile("allpng\\bg_end2.png");
-		bg_end.setTexture(texturebg_end);
-	}*/
-	window.draw(bg_end);
-	window.draw(t_end);
-
-}
-
-
 mainMenu::mainMenu(float width, float height)
 {
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
-		std::cerr << "Error: �������ö��Ŵ�͹��!" << std::endl;
+		std::cerr << "Error: ไม่สามารถโหลดฟอนต์!" << std::endl;
 	}
 	/*sf::Text scoretext("Score", font, 80);*/
 	menu[0].setFont(font);
 	//menu[0].setCharacterSize(100);
 	//menu[0].setFillColor(sf::Color(250,0,100); //RGB
-	//menu[0].setStyle(sf::Text::Style::Underlined | sf::Text::Style::Italic);//�մ������ͤ��� 4 ������§ 2
-	//menu[0].setOutlineColor(sf::Color::Green); //��鹢ͺ
-	//menu[0].setOutlineThickness(2); //�ͺ˹�
+	//menu[0].setStyle(sf::Text::Style::Underlined | sf::Text::Style::Italic);//ขีดเส้นใต้ข้อความ 4 ตัวเอียง 2
+	//menu[0].setOutlineColor(sf::Color::Green); //เส้นขอบ
+	//menu[0].setOutlineThickness(2); //ขอบหนา
 	menu[0].setString("PLAY");
 	menu[0].setOrigin(menu[0].getGlobalBounds().width / 2, menu[0].getGlobalBounds().height / 2);
 
@@ -1080,8 +1065,6 @@ void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
 		menu[2].setPosition(1604, 864);
 	}
 }
-
-
 
 void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window) {
 	if (gamestate == GameState::MENU)

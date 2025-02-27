@@ -50,7 +50,7 @@ int main()
 			}
 			if (gamestate == GameState::END)
 			{
-				UI.checkbackstage(event, gamestate);
+				//UI.checkbackstage(event, gamestate);
 			}
 		}
 
@@ -97,7 +97,6 @@ int main()
 			UI.Numeggy2smallinframe = NULL, UI.Numeggy2midinframe = NULL, UI.Numeggy2largeinframe = NULL;
 			playerturn = PlayerTurn::NOONE;
 			turn = 1;
-			winner = NULL;
 			for (int i = 0; i < 3; i++) {
 				UI.eggy1small[i].setPosition(515, 952.84);
 				UI.eggy2small[i].setPosition(1405, 95);
@@ -126,7 +125,7 @@ int main()
 				window.draw(UI.backarrowcream);
 				break;
 			case GameState::END:
-				eenndd.drawend(window,UI.bg_end);
+				UI.drawend(window, winner);
 				break;
 			default:
 				break;
