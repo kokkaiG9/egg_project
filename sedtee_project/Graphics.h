@@ -48,6 +48,12 @@ private:
 	sf::Texture texture_sq99_33;
 	sf::Texture texture_sq99green;
 	sf::Texture texturecdtime[25];
+	bool eggy1smallongrid[3] = { false, false, false };
+	bool eggy1midongrid[3] = { false, false, false };
+	bool eggy1largeongrid[2] = { false, false };
+	bool eggy2smallongrid[3] = { false, false, false };
+	bool eggy2midongrid[3] = { false, false, false };
+	bool eggy2largeongrid[2] = { false, false };
 	bool isDragging = false;
 	int selectedeggy1small = -1, selectedeggy2small = -1;
 	int selectedeggy1mid = -1, selectedeggy2mid = -1;
@@ -55,6 +61,7 @@ private:
 	sf::Vector2f offset;
 
 public:
+	bool endturn = false;
 	std::vector<sf::Sprite> eggy1small;		// n = 3
 	std::vector<sf::Sprite> eggy1mid;		// n = 3
 	std::vector<sf::Sprite> eggy1large;		// n = 2

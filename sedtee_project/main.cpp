@@ -64,6 +64,10 @@ int main()
 			UI.changecolorsq99(window);		// play:changecolorboard
 			UI.draggingeggyandblabla(window);		// dragging egg1,2
 			checkwinner.grid(UI.board);
+			if (UI.endturn) {
+				cdtime.setTimeLeft(-1);
+				UI.endturn = false;
+			}
 		// time-countdown per turn
 			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3 || cdtime.getTimeLeft() == -4) {
 				playerturn = PlayerTurn::NOONE;
