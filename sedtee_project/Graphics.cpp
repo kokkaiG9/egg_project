@@ -349,7 +349,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 	// eggy on grid
 	if (!isDragging) {
 		for (int i = 0; i < 3; i++) {
-		//small size//
+			//small size//
+
+	//tawan small//
 			if (sq99_11.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
 				if (checksize[0][0] < 1) {
@@ -364,54 +366,121 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			else {
 				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			if (sq99_12.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(955, 330);
-				board[0][1] = 1;
-				checksize[0][1] = 1;
+				if (checksize[0][1] < 1) {
+					eggy1small[i].setPosition(955, 330);
+					board[0][1] = 1;
+					checksize[0][1] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_13.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(1185, 330);
-				board[0][2] = 1;
-				checksize[0][2] = 1;
+				if (checksize[0][2] < 1) {
+					eggy1small[i].setPosition(1185, 330);
+					board[0][2] = 1;
+					checksize[0][2] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_21.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(725, 540);
-				board[1][0] = 1;
-				checksize[1][0] = 1;
+				if (checksize[1][0] < 1) {
+					eggy1small[i].setPosition(725, 540);
+					board[1][0] = 1;
+					checksize[1][0] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_22.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(955, 540);
-				board[1][1] = 1;
-				checksize[1][1] = 1;
+				if (checksize[1][1] < 1) {
+					eggy1small[i].setPosition(955, 540);
+					board[1][1] = 1;
+					checksize[1][1] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(1185, 540);
-				board[1][2] = 1;
-				checksize[1][2] = 1;
+				if (checksize[1][2] < 1) {
+					eggy1small[i].setPosition(1185, 540);
+					board[1][2] = 1;
+					checksize[1][2] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(725, 750);
-				board[2][0] = 1;
-				checksize[2][0] = 1;
+				if (checksize[2][0] < 1) {
+					eggy1small[i].setPosition(725, 750);
+					board[2][0] = 1;
+					checksize[2][0] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(955, 750);
-				board[2][1] = 1;
-				checksize[2][1] = 1;
+				if (checksize[2][1] < 1) {
+					eggy1small[i].setPosition(955, 750);
+					board[2][1] = 1;
+					checksize[2][1] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy1small[i].getPosition()))
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
-				eggy1small[i].setPosition(1185, 750);
-				board[2][2] = 1;
-				checksize[2][2] = 1;
+				if (checksize[2][2] < 1) {
+					eggy1small[i].setPosition(1185, 750);
+					board[2][2] = 1;
+					checksize[2][2] = 1;
+					eggy1smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1small[i].setPosition(515, 952.84);
 			}
+			else {
+				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			}
+
+			//nont small//
+
 			if (sq99_11.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
 				if (checksize[0][0] < 1) {
@@ -426,58 +495,123 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			else {
 				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			if (sq99_12.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
-				eggy2small[i].setPosition(955, 330);
-				board[0][1] = 2;
-				checksize[0][1] = 1;
+				if (checksize[0][1] < 1) {
+					eggy2small[i].setPosition(955, 330);
+					board[0][1] = 2;
+					checksize[0][1] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy2small[i].getPosition()))
-			{
-				eggy2small[i].setPosition(1185, 330);
-				board[0][2] = 2;
-				checksize[0][2] = 1;
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			if (sq99_13.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
-				eggy2small[i].setPosition(725, 540);
-				board[1][0] = 2;
-				checksize[1][0] = 1;
+				if (checksize[0][2] < 1) {
+					eggy2small[i].setPosition(1185, 330);
+					board[0][2] = 2;
+					checksize[0][2] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy2small[i].getPosition()))
-			{
-				eggy2small[i].setPosition(955, 540);
-				board[1][1] = 2;
-				checksize[1][1] = 1;
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			if (sq99_21.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
-				eggy2small[i].setPosition(1185, 540);
-				board[1][2] = 2;
-				checksize[1][2] = 1;
+				if (checksize[1][0] < 1) {
+					eggy2small[i].setPosition(725, 540);
+					board[1][0] = 2;
+					checksize[1][0] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy2small[i].getPosition()))
-			{
-				eggy2small[i].setPosition(725, 750);
-				board[2][0] = 2;
-				checksize[2][0] = 1;
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			if (sq99_22.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
-				eggy2small[i].setPosition(955, 750);
-				board[2][1] = 2;
-				checksize[2][1] = 1;
+				if (checksize[1][1] < 1) {
+					eggy2small[i].setPosition(955, 540);
+					board[1][1] = 2;
+					checksize[1][1] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy2small[i].getPosition()))
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+			}
+			if (sq99_23.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
-				eggy2small[i].setPosition(1185, 750);
-				board[2][2] = 2;
-				checksize[2][2] = 1;
+				if (checksize[1][2] < 1) {
+					eggy2small[i].setPosition(1185, 540);
+					board[1][2] = 2;
+					checksize[1][2] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
+			}
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+			}
+			if (sq99_31.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
+			{
+				if (checksize[2][0] < 1) {
+					eggy2small[i].setPosition(725, 750);
+					board[2][0] = 2;
+					checksize[2][0] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
+			}
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+			}
+			if (sq99_32.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
+			{
+				if (checksize[2][1] < 1) {
+					eggy2small[i].setPosition(955, 750);
+					board[2][1] = 2;
+					checksize[2][1] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
+			}
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+			}
+			if (sq99_33.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
+			{
+				if (checksize[2][2] < 1) {
+					eggy2small[i].setPosition(1185, 750);
+					board[2][2] = 2;
+					checksize[2][2] = 1;
+					eggy2smallongrid[i] = true;
+					endturn = true;
+				}
+				else eggy2small[i].setPosition(1405, 95);
+			}
+			else {
+				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 			}
 
 		}
 		for (int i = 0; i < 3; i++) {
 			//mid size//
+			//tawan mid//
 			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
 				if (checksize[0][0] < 2) {
@@ -492,224 +626,631 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			else {
 				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
-				eggy1mid[i].setPosition(955, 330);
-				board[0][1] = 1;
-				checksize[0][1] = 2;
+				if (checksize[0][1] < 2) {
+					eggy1mid[i].setPosition(955, 330);
+					board[0][1] = 1;
+					checksize[0][1] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1mid[i].setPosition(340, 908.94);
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(1185, 330);
-				board[0][2] = 1;
-				checksize[0][2] = 2;
+			else {
+				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy1mid[i].getPosition()))
+			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
-				eggy1mid[i].setPosition(725, 540);
-				board[1][0] = 1;
-				checksize[1][0] = 2;
+				if (checksize[0][2] < 2) {
+					eggy1mid[i].setPosition(1185, 330);
+					board[0][2] = 1;
+					checksize[0][2] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else eggy1mid[i].setPosition(340, 908.94);
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(955, 540);
-				board[1][1] = 1;
-				checksize[1][1] = 2;
+			else {
+				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(1185, 540);
-				board[1][2] = 1;
-				checksize[1][2] = 2;
+			if (sq99_21.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[1][0] < 2) {
+					eggy1mid[i].setPosition(725, 540);
+					board[1][0] = 1;
+					checksize[1][0] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(725, 750);
-				board[2][0] = 1;
-				checksize[2][0] = 2;
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(955, 750);
-				board[2][1] = 1;
-				checksize[2][1] = 2;
+
+			if (sq99_22.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[1][1] < 2) {
+					eggy1mid[i].setPosition(955, 540);
+					board[1][1] = 1;
+					checksize[1][1] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy1mid[i].getPosition()))
-			{
-				eggy1mid[i].setPosition(1185, 750);
-				board[2][2] = 1;
-				checksize[2][2] = 2;
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
-			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
+
+			if (sq99_23.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[1][2] < 2) {
+					eggy1mid[i].setPosition(1185, 540);
+					board[1][2] = 1;
+					checksize[1][2] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+
+			if (sq99_31.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[2][0] < 2) {
+					eggy1mid[i].setPosition(725, 750);
+					board[2][0] = 1;
+					checksize[2][0] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+
+			if (sq99_32.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[2][1] < 2) {
+					eggy1mid[i].setPosition(955, 750);
+					board[2][1] = 1;
+					checksize[2][1] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+
+			if (sq99_33.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
+				if (checksize[2][2] < 2) {
+					eggy1mid[i].setPosition(1185, 750);
+					board[2][2] = 1;
+					checksize[2][2] = 2;
+					eggy1midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+			else {
+				if (!eggy1midongrid[i]) {
+					eggy1mid[i].setPosition(340, 908.94);
+				}
+			}
+
+			// nont mid
+			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[0][0] < 2) {
 					eggy2mid[i].setPosition(725, 330);
 					board[0][0] = 2;
 					checksize[0][0] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
 				}
-				else eggy2mid[i].setPosition(1575, 124);
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
 			else {
-				if (eggy2midongrid[i]) eggy2mid[i].setPosition(1575, 124);
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(955, 330);
-				board[0][1] = 2;
-				checksize[0][1] = 2;
+
+			if (sq99_12.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[0][1] < 2) {
+					eggy2mid[i].setPosition(955, 330);
+					board[0][1] = 2;
+					checksize[0][1] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(1185, 330);
-				board[0][2] = 2;
-				checksize[0][2] = 2;
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(725, 540);
-				board[1][0] = 2;
-				checksize[1][0] = 2;
+
+			if (sq99_13.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[0][2] < 2) {
+					eggy2mid[i].setPosition(1185, 330);
+					board[0][2] = 2;
+					checksize[0][2] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(955, 540);
-				board[1][1] = 2;
-				checksize[1][1] = 2;
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(1185, 540);
-				board[1][2] = 2;
-				checksize[1][2] = 2;
+
+			if (sq99_21.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[1][0] < 2) {
+					eggy2mid[i].setPosition(725, 540);
+					board[1][0] = 2;
+					checksize[1][0] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(725, 750);
-				board[2][0] = 2;
-				checksize[2][0] = 2;
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(955, 750);
-				board[2][1] = 2;
-				checksize[2][1] = 2;
+
+			if (sq99_22.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[1][1] < 2) {
+					eggy2mid[i].setPosition(955, 540);
+					board[1][1] = 2;
+					checksize[1][1] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy2mid[i].getPosition()))
-			{
-				eggy2mid[i].setPosition(1185, 750);
-				board[2][2] = 2;
-				checksize[2][2] = 2;
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+
+			if (sq99_23.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[1][2] < 2) {
+					eggy2mid[i].setPosition(1185, 540);
+					board[1][2] = 2;
+					checksize[1][2] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+
+			if (sq99_31.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[2][0] < 2) {
+					eggy2mid[i].setPosition(725, 750);
+					board[2][0] = 2;
+					checksize[2][0] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+
+			if (sq99_32.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[2][1] < 2) {
+					eggy2mid[i].setPosition(955, 750);
+					board[2][1] = 2;
+					checksize[2][1] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+
+			if (sq99_33.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
+				if (checksize[2][2] < 2) {
+					eggy2mid[i].setPosition(1185, 750);
+					board[2][2] = 2;
+					checksize[2][2] = 2;
+					eggy2midongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2mid[i].setPosition(1575, 124);
+				}
+			}
+			else {
+				if (!eggy2midongrid[i]) {
+					eggy2mid[i].setPosition(1575, 124);
+				}
 			}
 		}
 		//large size//
 		for (int i = 0; i < 3; i++) {
-			if (sq99_11.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(725, 330);
-				board[0][0] = 1;
-				checksize[0][0] = 3;
+			// tawan large
+			if (sq99_11.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[0][0] < 3) {
+					eggy1large[i].setPosition(725, 330);
+					board[0][0] = 1;
+					checksize[0][0] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(955, 330);
-				board[0][1] = 1;
-				checksize[0][1] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(1185, 330);
-				board[0][2] = 1;
-				checksize[0][2] = 3;
+
+			if (sq99_12.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[0][1] < 3) {
+					eggy1large[i].setPosition(955, 330);
+					board[0][1] = 1;
+					checksize[0][1] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(725, 540);
-				board[1][0] = 1;
-				checksize[1][0] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(955, 540);
-				board[1][1] = 1;
-				checksize[1][1] = 3;
+
+			if (sq99_13.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[0][2] < 3) {
+					eggy1large[i].setPosition(1185, 330);
+					board[0][2] = 1;
+					checksize[0][2] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(1185, 540);
-				board[1][2] = 1;
-				checksize[1][2] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(725, 750);
-				board[2][0] = 1;
-				checksize[2][0] = 3;
+
+			if (sq99_21.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[1][0] < 3) {
+					eggy1large[i].setPosition(725, 540);
+					board[1][0] = 1;
+					checksize[1][0] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(955, 750);
-				board[2][1] = 1;
-				checksize[2][1] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy1large[i].getPosition()))
-			{
-				eggy1large[i].setPosition(1185, 750);
-				board[2][2] = 1;
-				checksize[2][2] = 3;
+
+			if (sq99_22.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[1][1] < 3) {
+					eggy1large[i].setPosition(955, 540);
+					board[1][1] = 1;
+					checksize[1][1] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_11.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(725, 330);
-				board[0][0] = 2;
-				checksize[0][0] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_12.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(955, 330);
-				board[0][1] = 2;
-				checksize[0][1] = 3;
+
+			if (sq99_23.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[1][2] < 3) {
+					eggy1large[i].setPosition(1185, 540);
+					board[1][2] = 1;
+					checksize[1][2] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_13.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(1185, 330);
-				board[0][2] = 2;
-				checksize[0][2] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_21.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(725, 540);
-				board[1][0] = 2;
-				checksize[1][0] = 3;
+
+			if (sq99_31.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[2][0] < 3) {
+					eggy1large[i].setPosition(725, 750);
+					board[2][0] = 1;
+					checksize[2][0] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_22.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(955, 540);
-				board[1][1] = 2;
-				checksize[1][1] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_23.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(1185, 540);
-				board[1][2] = 2;
-				checksize[1][2] = 3;
+
+			if (sq99_32.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[2][1] < 3) {
+					eggy1large[i].setPosition(955, 750);
+					board[2][1] = 1;
+					checksize[2][1] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_31.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(725, 750);
-				board[2][0] = 2;
-				checksize[2][0] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_32.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(955, 750);
-				board[2][1] = 2;
-				checksize[2][1] = 3;
+
+			if (sq99_33.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
+				if (checksize[2][2] < 3) {
+					eggy1large[i].setPosition(1185, 750);
+					board[2][2] = 1;
+					checksize[2][2] = 3;
+					eggy1largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy1large[i].setPosition(125, 874.22);
+				}
 			}
-			if (sq99_33.getGlobalBounds().contains(eggy2large[i].getPosition()))
-			{
-				eggy2large[i].setPosition(1185, 750);
-				board[2][2] = 2;
-				checksize[2][2] = 3;
+			else {
+				if (!eggy1largeongrid[i]) {
+					eggy1large[i].setPosition(125, 874.22);
+				}
+			}
+
+			// nont large
+			if (sq99_11.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[0][0] < 3) {
+					eggy2large[i].setPosition(725, 330);
+					board[0][0] = 2;
+					checksize[0][0] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_12.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[0][1] < 3) {
+					eggy2large[i].setPosition(955, 330);
+					board[0][1] = 2;
+					checksize[0][1] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_13.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[0][2] < 3) {
+					eggy2large[i].setPosition(1185, 330);
+					board[0][2] = 2;
+					checksize[0][2] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_21.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[1][0] < 3) {
+					eggy2large[i].setPosition(725, 540);
+					board[1][0] = 2;
+					checksize[1][0] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_22.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[1][1] < 3) {
+					eggy2large[i].setPosition(955, 540);
+					board[1][1] = 2;
+					checksize[1][1] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_23.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[1][2] < 3) {
+					eggy2large[i].setPosition(1185, 540);
+					board[1][2] = 2;
+					checksize[1][2] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_31.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[2][0] < 3) {
+					eggy2large[i].setPosition(725, 750);
+					board[2][0] = 2;
+					checksize[2][0] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_32.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[2][1] < 3) {
+					eggy2large[i].setPosition(955, 750);
+					board[2][1] = 2;
+					checksize[2][1] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+
+			if (sq99_33.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
+				if (checksize[2][2] < 3) {
+					eggy2large[i].setPosition(1185, 750);
+					board[2][2] = 2;
+					checksize[2][2] = 3;
+					eggy2largeongrid[i] = true;
+					endturn = true;
+				}
+				else {
+					eggy2large[i].setPosition(1790, 146);
+				}
+			}
+			else {
+				if (!eggy2largeongrid[i]) {
+					eggy2large[i].setPosition(1790, 146);
+				}
 			}
 		}
 	}
