@@ -354,91 +354,109 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			{
 				eggy1small[i].setPosition(725, 330);
 				board[0][0] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(955, 330);
 				board[0][1] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(1185, 330);
 				board[0][2] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(725, 540);
 				board[1][0] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(955, 540);
 				board[1][1] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(1185, 540);
 				board[1][2] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(725, 750);
 				board[2][0] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(955, 750);
 				board[2][1] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy1small[i].getPosition()))
 			{
 				eggy1small[i].setPosition(1185, 750);
 				board[2][2] = 1;
+				checksize[0][0] = 1;
 			}
 			if (sq99_11.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(725, 330);
 				board[0][0] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(955, 330);
 				board[0][1] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(1185, 330);
 				board[0][2] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(725, 540);
 				board[1][0] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(955, 540);
 				board[1][1] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(1185, 540);
 				board[1][2] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(725, 750);
 				board[2][0] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(955, 750);
 				board[2][1] = 2;
+				checksize[0][0] = 1;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy2small[i].getPosition()))
 			{
 				eggy2small[i].setPosition(1185, 750);
 				board[2][2] = 2;
+				checksize[0][0] = 1;
 			}
 
 		}
@@ -448,91 +466,109 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			{
 				eggy1mid[i].setPosition(725, 330);
 				board[0][0] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(955, 330);
 				board[0][1] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(1185, 330);
 				board[0][2] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(725, 540);
 				board[1][0] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(955, 540);
 				board[1][1] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(1185, 540);
 				board[1][2] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(725, 750);
 				board[2][0] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(955, 750);
 				board[2][1] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy1mid[i].getPosition()))
 			{
 				eggy1mid[i].setPosition(1185, 750);
 				board[2][2] = 1;
+				checksize[0][0] = 2;
 			}
 			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(725, 330);
 				board[0][0] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(955, 330);
 				board[0][1] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(1185, 330);
 				board[0][2] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(725, 540);
 				board[1][0] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(955, 540);
 				board[1][1] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(1185, 540);
 				board[1][2] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(725, 750);
 				board[2][0] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(955, 750);
 				board[2][1] = 2;
+				checksize[0][0] = 2;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy2mid[i].getPosition()))
 			{
 				eggy2mid[i].setPosition(1185, 750);
 				board[2][2] = 2;
+				checksize[0][0] = 2;
 			}
 		}
 		//large size//
@@ -541,91 +577,109 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 			{
 				eggy1large[i].setPosition(725, 330);
 				board[0][0] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(955, 330);
 				board[0][1] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(1185, 330);
 				board[0][2] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(725, 540);
 				board[1][0] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(955, 540);
 				board[1][1] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(1185, 540);
 				board[1][2] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(725, 750);
 				board[2][0] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(955, 750);
 				board[2][1] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy1large[i].getPosition()))
 			{
 				eggy1large[i].setPosition(1185, 750);
 				board[2][2] = 1;
+				checksize[0][0] = 3;
 			}
 			if (sq99_11.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(725, 330);
 				board[0][0] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(955, 330);
 				board[0][1] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(1185, 330);
 				board[0][2] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(725, 540);
 				board[1][0] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(955, 540);
 				board[1][1] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(1185, 540);
 				board[1][2] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(725, 750);
 				board[2][0] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(955, 750);
 				board[2][1] = 2;
+				checksize[0][0] = 3;
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy2large[i].getPosition()))
 			{
 				eggy2large[i].setPosition(1185, 750);
 				board[2][2] = 2;
+				checksize[0][0] = 3;
 			}
 		}
 	}
