@@ -221,14 +221,14 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			if (eggy1small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN)
+			if (eggy1small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN && !eggy1smallongrid[i])
 			{
 				isDragging = true;
 				offset = eggy1small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 				selectedeggy1small = i;
 				break;
 			}
-			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT)
+			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2smallongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
@@ -238,31 +238,14 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			if (eggy1small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN)
-			{
-				isDragging = true;
-				offset = eggy1small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
-				selectedeggy1small = i;
-				break;
-			}
-			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT)
-			{
-				isDragging = true;
-				offset = eggy2small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
-				selectedeggy2small = i;
-				break;
-			}
-		}
-		for (int i = 0; i < 3; i++)
-		{
-			if (eggy1mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN)
+			if (eggy1mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN && !eggy1midongrid[i])
 			{
 				isDragging = true;
 				offset = eggy1mid[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 				selectedeggy1mid = i;
 				break;
 			}
-			else if (eggy2mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT)
+			else if (eggy2mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2midongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2mid[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
@@ -272,14 +255,14 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 		}
 		for (int i = 0; i < 2; i++)
 		{
-			if (eggy1large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN)
+			if (eggy1large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::TAWAN && !eggy1largeongrid[i])
 			{
 				isDragging = true;
 				offset = eggy1large[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 				selectedeggy1large = i;
 				break;
 			}
-			else if (eggy2large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT)
+			else if (eggy2large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy1largeongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2large[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
