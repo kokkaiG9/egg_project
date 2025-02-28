@@ -90,10 +90,10 @@ int main()
 				UI.endturn = false;
 			}
 			// time-countdown per turn
-			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3 || cdtime.getTimeLeft() == -4) {
+			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3) {
 				playerturn = PlayerTurn::NOONE;
 			}
-			else if (cdtime.getTimeLeft() == -5) {
+			else if (cdtime.getTimeLeft() == -4) {
 				if (turn % 2 == 1) playerturn = PlayerTurn::TAWAN;
 				else playerturn = PlayerTurn::NONT;
 				turn++;
@@ -103,11 +103,9 @@ int main()
 
 			winner = checkwinner.checkWinner(UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe);
 			if (winner == 1) {
-				std::cout << "winner: TAWAN\n";
 				gamestate = GameState::END;
 			}
 			else if (winner == 2) {
-				std::cout << "winner: NONT\n";
 				gamestate = GameState::END;
 			}
 		}
@@ -166,8 +164,3 @@ int main()
 
 	return 0;
 }
-
-// to do list : (2 days to die)
-// - ŕŞç¤ÇčŇÇŇ§ä˘čľĂ§šŐéä´éäËÁ (ˇÍżżŐčˇÓťčŇÇÇĐ ăŞčŕŕËĹĐ)
-// - ËšéŇ tutorial (someone) 
-// - ËšéŇ ending + summary (someone)

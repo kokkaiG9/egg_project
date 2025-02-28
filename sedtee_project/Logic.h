@@ -13,7 +13,7 @@ public:
 // update time !!!(call this function every frame)!!!
     void update() {
         if (clock.getElapsedTime().asSeconds() >= 1) {
-            if (timeLeft > -5) {
+            if (timeLeft > -4) {
                 timeLeft--;
             }
             clock.restart();

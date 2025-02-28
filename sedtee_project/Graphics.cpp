@@ -361,10 +361,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -375,10 +374,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -389,10 +387,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -403,10 +400,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -417,10 +413,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -431,10 +426,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -445,10 +439,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -459,10 +452,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
-			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy1small[i].getPosition()) && !eggy1smallongrid[i])
 			{
@@ -473,11 +465,13 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1small[i].setPosition(515, 952.84);
+				else {
+					if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+				}
 			}
-			else {
-				if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
-			}
+			
+			if (!eggy1smallongrid[i]) eggy1small[i].setPosition(515, 952.84);
+			
 
 			//nont small//
 
@@ -490,10 +484,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_12.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -504,10 +497,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_13.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -518,10 +510,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -532,10 +523,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_22.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -546,10 +536,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_23.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -560,10 +549,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_31.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -574,10 +562,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_32.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -588,10 +575,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
-			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
 			if (sq99_33.getGlobalBounds().contains(eggy2small[i].getPosition()) && !eggy2smallongrid[i])
 			{
@@ -602,11 +588,12 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy2smallongrid[i] = true;
 					endturn = true;
 				}
-				else eggy2small[i].setPosition(1405, 95);
+				else {
+					if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
+				}
 			}
-			else {
-				if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
-			}
+
+			if (!eggy2smallongrid[i]) eggy2small[i].setPosition(1405, 95);
 
 		}
 		for (int i = 0; i < 3; i++) {
@@ -621,10 +608,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1midongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1mid[i].setPosition(340, 908.94);
-			}
-			else {
-				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				else {
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
 			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
@@ -635,10 +621,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1midongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1mid[i].setPosition(340, 908.94);
-			}
-			else {
-				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				else {
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
 			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
@@ -649,10 +634,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					eggy1midongrid[i] = true;
 					endturn = true;
 				}
-				else eggy1mid[i].setPosition(340, 908.94);
-			}
-			else {
-				if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				else {
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
+				}
 			}
 			if (sq99_21.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[1][0] < 2) {
@@ -663,15 +647,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
-
 			if (sq99_22.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[1][1] < 2) {
 					eggy1mid[i].setPosition(955, 540);
@@ -681,15 +659,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
-
 			if (sq99_23.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[1][2] < 2) {
 					eggy1mid[i].setPosition(1185, 540);
@@ -699,15 +671,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
-
 			if (sq99_31.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[2][0] < 2) {
 					eggy1mid[i].setPosition(725, 750);
@@ -717,15 +683,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
-
 			if (sq99_32.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[2][1] < 2) {
 					eggy1mid[i].setPosition(955, 750);
@@ -735,15 +695,9 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
-
 			if (sq99_33.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i]) {
 				if (checksize[2][2] < 2) {
 					eggy1mid[i].setPosition(1185, 750);
@@ -753,14 +707,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1mid[i].setPosition(340, 908.94);
+					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			else {
-				if (!eggy1midongrid[i]) {
-					eggy1mid[i].setPosition(340, 908.94);
-				}
-			}
+
+			if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 
 			// nont mid
 			if (sq99_11.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
@@ -772,15 +723,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_12.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[0][1] < 2) {
 					eggy2mid[i].setPosition(955, 330);
@@ -790,15 +737,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_13.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[0][2] < 2) {
 					eggy2mid[i].setPosition(1185, 330);
@@ -808,15 +751,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_21.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[1][0] < 2) {
 					eggy2mid[i].setPosition(725, 540);
@@ -826,15 +765,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_22.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[1][1] < 2) {
 					eggy2mid[i].setPosition(955, 540);
@@ -844,15 +779,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_23.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[1][2] < 2) {
 					eggy2mid[i].setPosition(1185, 540);
@@ -862,15 +793,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_31.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[2][0] < 2) {
 					eggy2mid[i].setPosition(725, 750);
@@ -880,15 +807,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_32.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[2][1] < 2) {
 					eggy2mid[i].setPosition(955, 750);
@@ -898,15 +821,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
-			}
-
 			if (sq99_33.getGlobalBounds().contains(eggy2mid[i].getPosition()) && !eggy2midongrid[i]) {
 				if (checksize[2][2] < 2) {
 					eggy2mid[i].setPosition(1185, 750);
@@ -916,14 +835,16 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2mid[i].setPosition(1575, 124);
+					if (!eggy2midongrid[i]) {
+						eggy2mid[i].setPosition(1575, 124);
+					}
 				}
 			}
-			else {
-				if (!eggy2midongrid[i]) {
-					eggy2mid[i].setPosition(1575, 124);
-				}
+
+			if (!eggy2midongrid[i]) {
+				eggy2mid[i].setPosition(1575, 124);
 			}
+
 		}
 		//large size//
 		for (int i = 0; i < 3; i++) {
@@ -937,15 +858,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_12.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[0][1] < 3) {
 					eggy1large[i].setPosition(955, 330);
@@ -955,15 +872,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_13.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[0][2] < 3) {
 					eggy1large[i].setPosition(1185, 330);
@@ -973,15 +886,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_21.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[1][0] < 3) {
 					eggy1large[i].setPosition(725, 540);
@@ -991,15 +900,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_22.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[1][1] < 3) {
 					eggy1large[i].setPosition(955, 540);
@@ -1009,15 +914,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_23.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[1][2] < 3) {
 					eggy1large[i].setPosition(1185, 540);
@@ -1027,15 +928,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_31.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[2][0] < 3) {
 					eggy1large[i].setPosition(725, 750);
@@ -1045,15 +942,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_32.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[2][1] < 3) {
 					eggy1large[i].setPosition(955, 750);
@@ -1063,15 +956,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
-			}
-
 			if (sq99_33.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[2][2] < 3) {
 					eggy1large[i].setPosition(1185, 750);
@@ -1081,13 +970,14 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy1large[i].setPosition(125, 874.22);
+					if (!eggy1largeongrid[i]) {
+						eggy1large[i].setPosition(125, 874.22);
+					}
 				}
 			}
-			else {
-				if (!eggy1largeongrid[i]) {
-					eggy1large[i].setPosition(125, 874.22);
-				}
+
+			if (!eggy1largeongrid[i]) {
+				eggy1large[i].setPosition(125, 874.22);
 			}
 
 			// nont large
@@ -1100,15 +990,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_12.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[0][1] < 3) {
 					eggy2large[i].setPosition(955, 330);
@@ -1118,15 +1004,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_13.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[0][2] < 3) {
 					eggy2large[i].setPosition(1185, 330);
@@ -1136,15 +1018,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_21.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[1][0] < 3) {
 					eggy2large[i].setPosition(725, 540);
@@ -1154,15 +1032,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_22.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[1][1] < 3) {
 					eggy2large[i].setPosition(955, 540);
@@ -1172,15 +1046,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_23.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[1][2] < 3) {
 					eggy2large[i].setPosition(1185, 540);
@@ -1190,15 +1060,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_31.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[2][0] < 3) {
 					eggy2large[i].setPosition(725, 750);
@@ -1208,15 +1074,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_32.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[2][1] < 3) {
 					eggy2large[i].setPosition(955, 750);
@@ -1226,15 +1088,11 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
-			}
-
 			if (sq99_33.getGlobalBounds().contains(eggy2large[i].getPosition()) && !eggy2largeongrid[i]) {
 				if (checksize[2][2] < 3) {
 					eggy2large[i].setPosition(1185, 750);
@@ -1244,13 +1102,13 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					endturn = true;
 				}
 				else {
-					eggy2large[i].setPosition(1790, 146);
+					if (!eggy2largeongrid[i]) {
+						eggy2large[i].setPosition(1790, 146);
+					}
 				}
 			}
-			else {
-				if (!eggy2largeongrid[i]) {
-					eggy2large[i].setPosition(1790, 146);
-				}
+			if (!eggy2largeongrid[i]) {
+				eggy2large[i].setPosition(1790, 146);
 			}
 		}
 	}
