@@ -118,6 +118,11 @@ int main()
 					UI.board[i][j] = 0;
 				}
 			}
+			for (int i = 0; i < 3; i++) {
+				for (int j = 0; j < 3; j++) {
+					UI.checksize[i][j] = 0;
+				}
+			}
 			UI.Numeggy1smallinframe = NULL, UI.Numeggy1midinframe = NULL, UI.Numeggy1largeinframe = NULL;
 			UI.Numeggy2smallinframe = NULL, UI.Numeggy2midinframe = NULL, UI.Numeggy2largeinframe = NULL;
 			playerturn = PlayerTurn::NOONE;
