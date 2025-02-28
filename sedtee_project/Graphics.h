@@ -31,6 +31,7 @@ private:
 	sf::Texture texturebg_play;
 	sf::Texture texturebg_end1;
 	sf::Texture texturebg_end2;
+	sf::Texture texturebg_tutorial;
 	sf::Texture texturenumber0;
 	sf::Texture texturenumber1;
 	sf::Texture texturenumber2;
@@ -75,6 +76,7 @@ public:
 	int Numeggy2smallinframe = NULL, Numeggy2midinframe = NULL, Numeggy2largeinframe = NULL;
 	sf::Sprite bg_menu;
 	sf::Sprite bg_play;
+	sf::Sprite bg_tutorial;
 	sf::Sprite bg_end1;
 	sf::Sprite bg_end2;
 	sf::Sprite sq99_11;

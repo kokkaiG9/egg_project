@@ -29,15 +29,17 @@ void Graphics::LoadAssets() {
 	backarrowcream.setPosition(25, 25);
 	backarrowgreen.setPosition(25, 25);
 
-	// load bg_menu, bg_play, bg_end
+	// load bg_menu, bg_play, bg_end, bg_tutorial
 	texturebg_menu.loadFromFile("allpng\\bg_menu.png");
 	texturebg_play.loadFromFile("allpng\\bg_play.png");
 	texturebg_end1.loadFromFile("allpng\\bg_end1.png");
 	texturebg_end2.loadFromFile("allpng\\bg_end2.png");
+	texturebg_tutorial.loadFromFile("allpng\\bg_tutorial.png");
 	bg_menu.setTexture(texturebg_menu);
 	bg_play.setTexture(texturebg_play);
 	bg_end1.setTexture(texturebg_end1);
 	bg_end2.setTexture(texturebg_end2);
+	bg_tutorial.setTexture(texturebg_tutorial);
 
 	//load 9*9 [1,1]-[3,3] , greensq
 	texture_sq99_11.loadFromFile("allpng\\99cream.png");
@@ -228,7 +230,7 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 				selectedeggy1small = i;
 				break;
 			}
-			else if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2smallongrid[i])
+			if (eggy2small[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2smallongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2small[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
@@ -245,7 +247,7 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 				selectedeggy1mid = i;
 				break;
 			}
-			else if (eggy2mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2midongrid[i])
+			if (eggy2mid[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2midongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2mid[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
@@ -262,7 +264,7 @@ void Graphics::draggingeggy(sf::Event event, PlayerTurn playerturn) {
 				selectedeggy1large = i;
 				break;
 			}
-			else if (eggy2large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy1largeongrid[i])
+			if (eggy2large[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && playerturn == PlayerTurn::NONT && !eggy2largeongrid[i])
 			{
 				isDragging = true;
 				offset = eggy2large[i].getPosition() - sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
@@ -595,7 +597,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
+			if (sq99_12.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
 				if (checksize[0][1] < 2) {
 					eggy1mid[i].setPosition(955, 330);
@@ -608,7 +610,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 					if (!eggy1midongrid[i]) eggy1mid[i].setPosition(340, 908.94);
 				}
 			}
-			if (sq99_11.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
+			if (sq99_13.getGlobalBounds().contains(eggy1mid[i].getPosition()) && !eggy1midongrid[i])
 			{
 				if (checksize[0][2] < 2) {
 					eggy1mid[i].setPosition(1185, 330);
@@ -830,7 +832,7 @@ void Graphics::draggingeggyandblabla(sf::RenderWindow& window) {
 
 		}
 		//large size//
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 			// tawan large
 			if (sq99_11.getGlobalBounds().contains(eggy1large[i].getPosition()) && !eggy1largeongrid[i]) {
 				if (checksize[0][0] < 3) {

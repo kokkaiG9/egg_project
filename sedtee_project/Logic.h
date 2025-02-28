@@ -22,7 +22,7 @@ public:
 
 // reset time
     void reset() {
-        timeLeft = 5;      // time per turn
+        timeLeft = 10;      // time per turn
     }
 
 // return timeleft
@@ -46,7 +46,7 @@ public:
         }
     }
 
-    int checkWinner(int eggy1mid, int eggy1large, int eggy2mid, int eggy2large) {
+    int checkWinner(int eggy1small, int eggy1mid, int eggy1large, int eggy2small, int eggy2mid, int eggy2large, PlayerTurn playerturn) {
         // ตรวจสอบแถว
         for (int row = 0; row < 3; row++) {
             if (board[row][0] != 0 && board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
@@ -83,7 +83,7 @@ public:
         if (hasEmpty) return 0;
 
         // ถ้ากระดานเต็มและไม่มีใครชนะ -> คนที่มีจำนวนหมากมากกว่าชนะ
-        if (eggy1large == 0 && eggy2large == 0 && (eggy1mid == 1 || eggy1mid == 0) && (eggy2mid == 1 || eggy2mid == 0)) {
+        if ((eggy1large == 0 && eggy2large == 0 && (eggy1mid == 1 || eggy1mid == 0) && (eggy2mid == 1 || eggy2mid == 0) && playerturn == PlayerTurn::NOONE) || (eggy1small == 0 && eggy1mid == 0 && eggy1large == 0 && eggy2small == 0 && eggy2mid == 0 && eggy2large == 0 && playerturn == PlayerTurn::NOONE)) {
             if (countNont > countTawan) return 1;
             if (countTawan > countNont) return 2;
         }

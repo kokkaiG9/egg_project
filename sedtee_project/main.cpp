@@ -101,7 +101,7 @@ int main()
 			}
 			cdtime.update();
 
-			winner = checkwinner.checkWinner(UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe);
+			winner = checkwinner.checkWinner(UI.Numeggy1smallinframe, UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2smallinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe, playerturn);
 			if (winner == 1) {
 				gamestate = GameState::END;
 			}
@@ -152,7 +152,8 @@ int main()
 			UI.drawplay(window, cdtime.getTimeLeft(), playerturn);
 			break;
 		case GameState::TUTORIAL:
-			window.draw(UI.backarrowcream);
+			window.draw(UI.bg_tutorial);
+			UI.drawbackarrow(window);
 			break;
 		case GameState::END:
 			UI.drawend(window, winner);
