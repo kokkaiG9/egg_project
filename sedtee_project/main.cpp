@@ -6,7 +6,7 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Eggy of Tawan&Nont !!!", sf::Style::Close);
 
-// SOUND BACKGROUND
+	// SOUND BACKGROUND
 	sf::Music bgMusic;
 	if (!bgMusic.openFromFile("Free-Free-Lofi-Music-_For-YouTube_-After-the-Rain-by-Tokyo-Music-Walker.ogg"))
 	{
@@ -16,12 +16,25 @@ int main()
 	bgMusic.setVolume(10);		// suggestion: turn volume window to 60
 	bgMusic.setLoop(true);
 	bgMusic.play();
-// UI
+
+
+	// SOUND EFFECTS
+	sf::SoundBuffer clickBuffer;
+	if (!clickBuffer.loadFromFile("mouse-click-290204.ogg")) {
+		std::cerr << "Error loading click sound file!" << std::endl;
+		return -1;
+	}
+	sf::Sound clickSound;
+	clickSound.setBuffer(clickBuffer);
+	clickSound.setVolume(50);
+
+
+	// UI
 	Graphics UI;
 	UI.LoadAssets();
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
 	END eenndd(window.getSize().x, window.getSize().y);
-// GAMEPLAY
+	// GAMEPLAY
 	GameState gamestate = GameState::MENU;
 	PlayerTurn playerturn = PlayerTurn::NOONE;
 	CountdownTimer cdtime;
@@ -39,7 +52,7 @@ int main()
 			{
 				window.close();
 			}
-			if (gamestate == GameState::PLAY) 
+			if (gamestate == GameState::PLAY)
 			{
 				UI.checkbackstage(event, gamestate);
 				UI.draggingeggy(event, playerturn);		// dragging eggy1,2
@@ -47,18 +60,26 @@ int main()
 			if (gamestate == GameState::TUTORIAL)
 			{
 				UI.checkbackstage(event, gamestate);
+				if (event.type == sf::Event::MouseButtonPressed) {
+					clickSound.play();
+				}
 			}
 			if (gamestate == GameState::END)
 			{
-				//UI.checkbackstage(event, gamestate);
 				eenndd.changecolorbutton_end(window);
 				eenndd.changestate_end_button(gamestate, window, winner);
+				if (event.type == sf::Event::MouseButtonPressed) {
+					clickSound.play();
+				}
 			}
 		}
 
 		if (gamestate == GameState::MENU) {
-			mainmenu.changecolorbuttonmenu(window);		// menu:changecolorbutton
-			mainmenu.changestatebutton(gamestate, window);		// change GAMESTAGE
+			mainmenu.changecolorbuttonmenu(window);
+			mainmenu.changestatebutton(gamestate, window);
+			if (event.type == sf::Event::MouseButtonPressed) {
+				clickSound.play();
+			}
 		}
 		if (gamestate == GameState::PLAY) {
 			UI.changecolorsq99(window);		// play:changecolorboard
@@ -68,12 +89,12 @@ int main()
 				cdtime.setTimeLeft(-1);
 				UI.endturn = false;
 			}
-		// time-countdown per turn
+			// time-countdown per turn
 			if (cdtime.getTimeLeft() == -1 || cdtime.getTimeLeft() == -2 || cdtime.getTimeLeft() == -3 || cdtime.getTimeLeft() == -4) {
 				playerturn = PlayerTurn::NOONE;
 			}
 			else if (cdtime.getTimeLeft() == -5) {
-				if (turn%2 == 1) playerturn = PlayerTurn::TAWAN;
+				if (turn % 2 == 1) playerturn = PlayerTurn::TAWAN;
 				else playerturn = PlayerTurn::NONT;
 				turn++;
 				cdtime.reset();
@@ -92,7 +113,7 @@ int main()
 		}
 
 		if (gamestate == GameState::TUTORIAL) {}
-	// clear all data 
+		// clear all data 
 		if (gamestate == GameState::END) {
 			for (int i = 0; i < 3; i++) {
 				for (int j = 0; j < 3; j++) {
@@ -119,35 +140,34 @@ int main()
 		}
 
 		window.clear();
-		
+
 		switch (gamestate) {
-			case GameState::MENU:
-				mainmenu.drawmenu(window, UI.bg_menu);
-				break;
-			case GameState::PLAY:
-				UI.drawplay(window, cdtime.getTimeLeft(), playerturn);
-				break;
-			case GameState::TUTORIAL:
-				window.draw(UI.backarrowcream);
-				break;
-			case GameState::END:
-				UI.drawend(window, winner);
-				eenndd.drawbacktext(window);
-				break;
-			default:
-				break;
+		case GameState::MENU:
+			mainmenu.drawmenu(window, UI.bg_menu);
+			break;
+		case GameState::PLAY:
+			UI.drawplay(window, cdtime.getTimeLeft(), playerturn);
+			break;
+		case GameState::TUTORIAL:
+			window.draw(UI.backarrowcream);
+			break;
+		case GameState::END:
+			UI.drawend(window, winner);
+			eenndd.drawbacktext(window);
+			break;
+		default:
+			break;
 		}
 
 		window.display();
 	}
-	
 
-	
+
+
 	return 0;
 }
 
 // to do list : (2 days to die)
-// - àªç¤ÇèÒÇÒ§ä¢èµÃ§¹Õéä´éäËÁ (·Í¿¿Õè·Ó»èÒÇÇÐ ãªèààËÅÐ)
-// - Ë¹éÒ tutorial (someone) 
-// - Ë¹éÒ ending + summary (someone)
-
+// - Å•ÅžÃ§Â¤Ã‡ÄÅ‡Ã‡Å‡Â§Ã¤Ë˜ÄÄ¾Ä‚Â§Å¡ÅÃ©Ã¤Â´Ã©Ã¤Ã‹Ã (Ë‡ÃÅ¼Å¼ÅÄË‡Ã“Å¥ÄÅ‡Ã‡Ã‡Ä ÄƒÅžÄÅ•Å•Ã‹Ä¹Ä)
+// - Ã‹Å¡Ã©Å‡ tutorial (someone) 
+// - Ã‹Å¡Ã©Å‡ ending + summary (someone)
