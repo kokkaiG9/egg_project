@@ -1,39 +1,23 @@
 #include "Graphics.h"
 #include "Logic.h"
+#include "Sound.h"
 #include <SFML/Audio.hpp>
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Eggy of Tawan&Nont !!!", sf::Style::Close);
-
-	// SOUND BACKGROUND
-	sf::Music bgMusic;
-	if (!bgMusic.openFromFile("Free-Free-Lofi-Music-_For-YouTube_-After-the-Rain-by-Tokyo-Music-Walker.ogg"))
-	{
-		std::cerr << "Error loading music file!" << std::endl;
-		return -1;
-	}
-	bgMusic.setVolume(10);		// suggestion: turn volume window to 60
-	bgMusic.setLoop(true);
-	bgMusic.play();
-
-
-	// SOUND EFFECTS
-	sf::SoundBuffer clickBuffer;
-	if (!clickBuffer.loadFromFile("mouse-click-290204.ogg")) {
-		std::cerr << "Error loading click sound file!" << std::endl;
-		return -1;
-	}
-	sf::Sound clickSound;
-	clickSound.setBuffer(clickBuffer);
-	clickSound.setVolume(50);
-
+	
+	// SOUND
+	Sound sound;
+	sound.loadsound();
+	sound.bgmusic.play();
 
 	// UI
 	Graphics UI;
 	UI.LoadAssets();
 	mainMenu mainmenu(window.getSize().x, window.getSize().y);
 	END eenndd(window.getSize().x, window.getSize().y);
+
 	// GAMEPLAY
 	GameState gamestate = GameState::MENU;
 	PlayerTurn playerturn = PlayerTurn::NOONE;
@@ -54,36 +38,30 @@ int main()
 			}
 			if (gamestate == GameState::PLAY)
 			{
-				UI.checkbackstage(event, gamestate);
-				UI.draggingeggy(event, playerturn);		// dragging eggy1,2
+				UI.checkbackstage(event, gamestate, sound.soundclickbuttonmenu);
+				UI.draggingeggy(event, playerturn);		// draggingeggy
 			}
 			if (gamestate == GameState::TUTORIAL)
 			{
-				UI.checkbackstage(event, gamestate);
-				if (event.type == sf::Event::MouseButtonPressed) {
-					clickSound.play();
-				}
+				UI.checkbackstage(event, gamestate, sound.soundclickbuttonmenu);
 			}
 			if (gamestate == GameState::END)
 			{
 				eenndd.changecolorbutton_end(window);
-				eenndd.changestate_end_button(gamestate, window, winner);
-				if (event.type == sf::Event::MouseButtonPressed) {
-					clickSound.play();
-				}
+				eenndd.changestate_end_button(gamestate, window, winner, sound.soundclickbuttonmenu);
 			}
 		}
 
+	//GAMESTATE::MENU
 		if (gamestate == GameState::MENU) {
 			mainmenu.changecolorbuttonmenu(window);
-			mainmenu.changestatebutton(gamestate, window);
-			if (event.type == sf::Event::MouseButtonPressed) {
-				clickSound.play();
-			}
+			mainmenu.changestatebutton(gamestate, window, sound.soundclickbuttonmenu);
 		}
+
+	//GAMESTATE::PLAY
 		if (gamestate == GameState::PLAY) {
-			UI.changecolorsq99(window);		// play:changecolorboard
-			UI.draggingeggyandblabla(window);		// dragging egg1,2
+			UI.changecolorsq99(window);		// changecolorboard
+			UI.draggingeggyandblabla(window, sound.soundITAWAN, sound.soundINONT); // draggingeggy & blabla
 			checkwinner.grid(UI.board);
 			if (UI.endturn) {
 				cdtime.setTimeLeft(-1);
@@ -100,17 +78,16 @@ int main()
 				cdtime.reset();
 			}
 			cdtime.update();
-
+			// checkwinner
 			winner = checkwinner.checkWinner(UI.Numeggy1smallinframe, UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2smallinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe, playerturn);
-			if (winner == 1) {
-				gamestate = GameState::END;
-			}
-			else if (winner == 2) {
-				gamestate = GameState::END;
+			if (winner == 1 || winner == 2) {
+				if (cdtime.getTimeLeft() == -4) {
+					gamestate = GameState::END;
+				}
 			}
 		}
 
-		if (gamestate == GameState::TUTORIAL) {}
+	// GAMESTATE::END
 		// clear all data 
 		if (gamestate == GameState::END) {
 			for (int i = 0; i < 3; i++) {
@@ -142,6 +119,7 @@ int main()
 			cdtime.setTimeLeft(-1);
 		}
 
+//DISPLAY
 		window.clear();
 
 		switch (gamestate) {
@@ -153,7 +131,7 @@ int main()
 			break;
 		case GameState::TUTORIAL:
 			window.draw(UI.bg_tutorial);
-			UI.drawbackarrow(window);
+			UI.drawbackarrow(window);		
 			break;
 		case GameState::END:
 			UI.drawend(window, winner);

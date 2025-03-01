@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <SFML\Audio.hpp>
 #include <iostream>
 #define MAX_ITEM 3
 
@@ -98,8 +99,8 @@ public:
 	~Graphics();
 	void LoadAssets();
 	void draggingeggy(sf::Event, PlayerTurn);
-	void draggingeggyandblabla(sf::RenderWindow&);
-	void checkbackstage(sf::Event, GameState&);
+	void draggingeggyandblabla(sf::RenderWindow&, sf::Sound&, sf::Sound&);
+	void checkbackstage(sf::Event, GameState&, sf::Sound&);
 	void changecolorsq99(sf::RenderWindow&);
 	bool changecolorbacksarow(sf::RenderWindow&);
 	void drawNumeggy(sf::RenderWindow&);
@@ -124,10 +125,8 @@ public:
 
 	void drawmenu(sf::RenderWindow& , sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
-	void changestatebutton(GameState&, sf::RenderWindow&);
-	
+	void changestatebutton(GameState&, sf::RenderWindow&, sf::Sound&);
 };
-
 
 class END
 {
@@ -141,6 +140,6 @@ public:
 	~END();
 
 	void changecolorbutton_end(sf::RenderWindow&);
-	void changestate_end_button(GameState&, sf::RenderWindow&, int&);
+	void changestate_end_button(GameState&, sf::RenderWindow&, int&, sf::Sound&);
 	void drawbacktext(sf::RenderWindow&);
 };
