@@ -48,14 +48,14 @@ int main()
 			if (gamestate == GameState::END)
 			{
 				eenndd.changecolorbutton_end(window);
-				eenndd.changestate_end_button(gamestate, window, winner, sound.soundclickbuttonmenu);
+				eenndd.changestate_end_button(gamestate, window, winner, sound.soundclickbuttonmenu, sound.bgmusic);
 			}
 		}
 
 	//GAMESTATE::MENU
 		if (gamestate == GameState::MENU) {
 			mainmenu.changecolorbuttonmenu(window);
-			mainmenu.changestatebutton(gamestate, window, sound.soundclickbuttonmenu);
+			mainmenu.changestatebutton(gamestate, window, sound.soundclickbuttonmenu, sound.soundWelcomePlay);
 		}
 
 	//GAMESTATE::PLAY
@@ -81,6 +81,7 @@ int main()
 			// checkwinner
 			winner = checkwinner.checkWinner(UI.Numeggy1smallinframe, UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2smallinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe, playerturn);
 			if (winner == 1 || winner == 2) {
+				if(cdtime.getTimeLeft() == -1) sound.soundVictory.play();		//sound for winner
 				if (cdtime.getTimeLeft() == -4) {
 					gamestate = GameState::END;
 				}
@@ -90,6 +91,10 @@ int main()
 	// GAMESTATE::END
 		// clear all data 
 		if (gamestate == GameState::END) {
+			if (turn != 1) {						//start gamestate::end sound  &  stop bgmusic
+				sound.bgmusic.pause();
+				sound.soundWelcomeEnd.play();
+			}
 			for (int i = 0; i < 3; i++) {
 				for (int j = 0; j < 3; j++) {
 					UI.board[i][j] = 0;

@@ -125,7 +125,7 @@ public:
 
 	void drawmenu(sf::RenderWindow& , sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
-	void changestatebutton(GameState&, sf::RenderWindow&, sf::Sound&);
+	void changestatebutton(GameState&, sf::RenderWindow&, sf::Sound&, sf::Sound&);
 };
 
 class END
@@ -140,6 +140,6 @@ public:
 	~END();
 
 	void changecolorbutton_end(sf::RenderWindow&);
-	void changestate_end_button(GameState&, sf::RenderWindow&, int&, sf::Sound&);
+	void changestate_end_button(GameState&, sf::RenderWindow&, int&, sf::Sound&, sf::Music&);
 	void drawbacktext(sf::RenderWindow&);
 };

@@ -1506,7 +1506,7 @@ void END::changecolorbutton_end(sf::RenderWindow& window) {
 	}
 }
 
-void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window, int& winner, sf::Sound& clicksound) {
+void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window, int& winner, sf::Sound& clicksound, sf::Music& bgmusic) {
 	if (gamestate == GameState::END)
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -1515,6 +1515,7 @@ void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window,
 			{
 				clicksound.play();
 				gamestate = GameState::MENU;
+				bgmusic.play();
 				winner = NULL;
 			}
 			
@@ -1532,13 +1533,7 @@ mainMenu::mainMenu(float width, float height)
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
 		std::cerr << "Error: ไม่สามารถโหลดฟอนต์!" << std::endl;
 	}
-	/*sf::Text scoretext("Score", font, 80);*/
 	menu[0].setFont(font);
-	//menu[0].setCharacterSize(100);
-	//menu[0].setFillColor(sf::Color(250,0,100); //RGB
-	//menu[0].setStyle(sf::Text::Style::Underlined | sf::Text::Style::Italic);//ขีดเส้นใต้ข้อความ 4 ตัวเอียง 2
-	//menu[0].setOutlineColor(sf::Color::Green); //เส้นขอบ
-	//menu[0].setOutlineThickness(2); //ขอบหนา
 	menu[0].setString("PLAY");
 	menu[0].setOrigin(menu[0].getGlobalBounds().width / 2, menu[0].getGlobalBounds().height / 2);
 
@@ -1591,7 +1586,7 @@ void mainMenu::changecolorbuttonmenu(sf::RenderWindow& window) {
 	}
 }
 
-void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window, sf::Sound& clicksound) {
+void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window, sf::Sound& clicksound, sf::Sound& welcomeplay) {
 	if (gamestate == GameState::MENU)
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -1600,6 +1595,7 @@ void mainMenu::changestatebutton(GameState& gamestate, sf::RenderWindow& window,
 			{
 				clicksound.play();
 				gamestate = GameState::PLAY;
+				welcomeplay.play();		//start gamestate::play sound
 			}
 			else if (menu[1].getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 			{
