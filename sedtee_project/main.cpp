@@ -1,7 +1,6 @@
 #include "Graphics.h"
 #include "Logic.h"
 #include "Sound.h"
-#include <SFML/Audio.hpp>
 
 int main()
 {
@@ -52,15 +51,15 @@ int main()
 			}
 		}
 
-	//GAMESTATE::MENU
+	// GAMESTATE::MENU
 		if (gamestate == GameState::MENU) {
 			mainmenu.changecolorbuttonmenu(window);
 			mainmenu.changestatebutton(gamestate, window, sound.soundclickbuttonmenu, sound.soundWelcomePlay);
 		}
 
-	//GAMESTATE::PLAY
+	// GAMESTATE::PLAY
 		if (gamestate == GameState::PLAY) {
-			UI.changecolorsq99(window);		// changecolorboard
+			UI.changecolorsq99(window);
 			UI.draggingeggyandblabla(window, sound.soundITAWAN, sound.soundINONT); // draggingeggy & blabla
 			checkwinner.grid(UI.board);
 			if (UI.endturn) {
@@ -81,20 +80,21 @@ int main()
 			// checkwinner
 			winner = checkwinner.checkWinner(UI.Numeggy1smallinframe, UI.Numeggy1midinframe, UI.Numeggy1largeinframe, UI.Numeggy2smallinframe, UI.Numeggy2midinframe, UI.Numeggy2largeinframe, playerturn);
 			if (winner == 1 || winner == 2) {
-				if(cdtime.getTimeLeft() == -1) sound.soundVictory.play();		//sound for winner
+				if(cdtime.getTimeLeft() == -1) sound.soundVictory.play();	// when has winner -> play sound
 				if (cdtime.getTimeLeft() == -4) {
 					gamestate = GameState::END;
 				}
 			}
 		}
 
-	// GAMESTATE::END
-		// clear all data 
+	// GAMESTATE::END 
 		if (gamestate == GameState::END) {
-			if (turn != 1) {						//start gamestate::end sound  &  stop bgmusic
+			//start gamestate::end sound  &  stop bgmusic
+			if (turn != 1) {						
 				sound.bgmusic.pause();
 				sound.soundWelcomeEnd.play();
 			}
+			// clear all data
 			for (int i = 0; i < 3; i++) {
 				for (int j = 0; j < 3; j++) {
 					UI.board[i][j] = 0;
@@ -124,7 +124,7 @@ int main()
 			cdtime.setTimeLeft(-1);
 		}
 
-//DISPLAY
+// DISPLAY
 		window.clear();
 
 		switch (gamestate) {

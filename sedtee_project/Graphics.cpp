@@ -1,9 +1,5 @@
 ﻿#include "Graphics.h"
 
-Graphics::~Graphics() {
-	
-}
-
 void Graphics::LoadAssets() {
 	// load number0,1,2,3
 	texturenumber0.loadFromFile("allpng\\number0.png");
@@ -1192,19 +1188,6 @@ void Graphics::checkbackstage(sf::Event event, GameState& gamestate, sf::Sound& 
 	}
 }
 
-bool Graphics::changecolorbacksarow(sf::RenderWindow& window) 
-{
-	if (backarrowcream.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
-	{
-		return true;
-	}
-	else 
-	{
-		return false;
-	}
-	
-}
-
 void Graphics::changecolorsq99(sf::RenderWindow& window)
 {
 	if (sq99_11.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
@@ -1264,6 +1247,19 @@ void Graphics::changecolorsq99(sf::RenderWindow& window)
 		texture_sq99_32.loadFromFile("allpng\\99cream.png");
 		texture_sq99_33.loadFromFile("allpng\\99cream.png");
 	}
+}
+
+bool Graphics::changecolorbacksarow(sf::RenderWindow& window) 
+{
+	if (backarrowcream.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+	
 }
 
 void Graphics::drawNumeggy(sf::RenderWindow& window) {
@@ -1488,46 +1484,6 @@ END::~END()
 
 }
 
-void END::changecolorbutton_end(sf::RenderWindow& window) {
-	if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
-	{
-		t_end.setFillColor(sf::Color::Red);
-		t_end.setCharacterSize(60);
-		t_end.setOutlineColor(sf::Color::Green);
-		t_end.setPosition(1692, 882);
-	}
-	else
-	{
-		t_end.setFillColor(sf::Color::White);
-		t_end.setCharacterSize(60);
-		t_end.setOutlineColor(sf::Color::Black);
-		t_end.setOutlineThickness(3);
-		t_end.setPosition(1692, 882);
-	}
-}
-
-void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window, int& winner, sf::Sound& clicksound, sf::Music& bgmusic) {
-	if (gamestate == GameState::END)
-	{
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-		{
-			if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
-			{
-				clicksound.play();
-				gamestate = GameState::MENU;
-				bgmusic.play();
-				winner = NULL;
-			}
-			
-		}
-	}
-}
-
-void END::drawbacktext(sf::RenderWindow& window)
-{
-	window.draw(t_end);
-}
-
 mainMenu::mainMenu(float width, float height)
 {
 	if (!font.loadFromFile("Montserrat-ExtraBold.ttf")) {
@@ -1616,4 +1572,44 @@ void mainMenu::drawmenu(sf::RenderWindow& window, sf::Sprite bg_menu) {
 	for (int i = 0; i < MAX_ITEM; i++) {
 		window.draw(menu[i]);
 	}
+}
+
+void END::changecolorbutton_end(sf::RenderWindow& window) {
+	if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+	{
+		t_end.setFillColor(sf::Color::Red);
+		t_end.setCharacterSize(60);
+		t_end.setOutlineColor(sf::Color::Green);
+		t_end.setPosition(1692, 882);
+	}
+	else
+	{
+		t_end.setFillColor(sf::Color::White);
+		t_end.setCharacterSize(60);
+		t_end.setOutlineColor(sf::Color::Black);
+		t_end.setOutlineThickness(3);
+		t_end.setPosition(1692, 882);
+	}
+}
+
+void END::changestate_end_button(GameState& gamestate, sf::RenderWindow& window, int& winner, sf::Sound& clicksound, sf::Music& bgmusic) {
+	if (gamestate == GameState::END)
+	{
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			if (t_end.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+			{
+				clicksound.play();
+				gamestate = GameState::MENU;
+				bgmusic.play();
+				winner = NULL;
+			}
+			
+		}
+	}
+}
+
+void END::drawbacktext(sf::RenderWindow& window)
+{
+	window.draw(t_end);
 }

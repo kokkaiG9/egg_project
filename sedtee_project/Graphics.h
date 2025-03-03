@@ -96,7 +96,6 @@ public:
 	int checksize[3][3] = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0} };
 	std::vector<sf::Sprite> cdtime;
 
-	~Graphics();
 	void LoadAssets();
 	void draggingeggy(sf::Event, PlayerTurn);
 	void draggingeggyandblabla(sf::RenderWindow&, sf::Sound&, sf::Sound&);
@@ -123,9 +122,9 @@ public:
 	mainMenu(float width, float hight);
 	~mainMenu();
 
-	void drawmenu(sf::RenderWindow& , sf::Sprite);
 	void changecolorbuttonmenu(sf::RenderWindow&);
 	void changestatebutton(GameState&, sf::RenderWindow&, sf::Sound&, sf::Sound&);
+	void drawmenu(sf::RenderWindow& , sf::Sprite);
 };
 
 class END
